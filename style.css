@@ -331,3 +331,94 @@ nav {
   line-height: 1.7;
   color: #6b7280;
 }
+
+/* SECTION 2 */
+.section2 {
+  padding: 60px 48px;
+  background: #f4f5f7;
+}
+
+.section2-general {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  background: #6b7db3;
+  border-radius: 24px;
+  overflow: hidden;
+  min-height: 420px;
+  padding: 56px 0 0 64px; 
+  gap: 40px;
+  position: relative;
+}
+
+/* Fond dégradé*/
+.section2-general::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #5a6fa8 0%, #7b8fc4 100%);
+  z-index: 0;
+}
+
+.text-section2,
+.img-section2 {
+  position: relative;
+  z-index: 1;
+}
+
+/* Texte */
+.text-section2 h2 {
+  font-size: 38px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.text-section2 p {
+  font-size: 14px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 420px;
+  margin-bottom: 32px;
+}
+
+/* Liste des points */
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.info span {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.info span i {
+  font-size: 20px;
+  color: #a8d8a8;
+  flex-shrink: 0;
+}
+
+/* Image */
+.img-section2 {
+   display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100%;
+  overflow: hidden;
+}
+
+.img-section2 img {
+  height: 390px;
+  width: 200%;
+  object-fit: contain;
+  object-position: center;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.2));
+}
+
