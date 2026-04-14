@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style-connexion.css">
+    <title>CLYNK | Connexion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="icon" type="image/x-icon" href="../ressources/favicon_io/android-chrome-512x512.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header-connexion">
+        <a href="../index.html" class="btn-retour">
+            <i class="fa-solid fa-circle-arrow-left"></i>
+            Retour
+        </a>
+        <div class="header-logo">
+            <img src="../ressources/logo Clynk1.png" alt="Logo Clynk" class="logo" />
+            <p>LA SANTÉ SÉCURISÉE</p>
+        </div>
+        <div></div> <!-- spacer pour centrer le logo -->
+    </div>
+
+    <!-- Carte connexion -->
+    <div class="connexion-card">
+
+        <div class="card-header">
+            <h2>Bon retour</h2>
+            <p>Veuillez entrer vos identifiants pour accéder à votre espace de santé sécurisé.</p>
+        </div>
+
+        <div class="input-form">
+
+            <!-- Email -->
+            <div class="form-group">
+                <label>EMAIL OU IDENTIFIANT</label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" placeholder="JohnDoeDupont@gmail.com" />
+                </div>
+            </div>
+
+            <!-- Rôle -->
+            <div class="form-group">
+                <label>Rôle</label>
+                <select>
+                    <option value="">Médecin</option>
+                    <option value="">Patient</option>
+                </select>
+            </div>
+
+            <!-- Mot de passe -->
+            <div class="form-group">
+                <div class="label-row">
+                    <label>MOT DE PASSE</label>
+                    <a href="#" class="forgot">Mot de passe oublié ?</a>
+                </div>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" placeholder="••••••••••••" id="password" />
+                    <i class="fa-solid fa-eye-slash toggle-password" onclick="togglePassword()"></i>
+                </div>
+            </div>
+
+            <!-- Se souvenir -->
+            <div class="remember">
+                <input type="checkbox" id="remember" />
+                <label for="remember">Se rappeler de moi</label>
+            </div>
+
+            <!-- Bouton connexion -->
+            <a href="#" class="btn-connexion">
+                CONNEXION
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+        <!-- Déjà membre -->
+        <p class="already">Déjà membre ? <a href="#">Créer un compte</a></p>
+
+        <!-- Badges sécurité -->
+        <div class="badges">
+            <span><i class="fa-solid fa-shield-halved"></i> HDS</span>
+            <div class="separator"></div>
+            <span><i class="fa-solid fa-file-shield"></i> RGPD</span>
+        </div>
+
+    </div>
+
+</body>
+</html>

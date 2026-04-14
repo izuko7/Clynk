@@ -695,7 +695,7 @@ footer {
   font-weight: 600;
   font-family: 'Poppins', sans-serif;
   cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease;
+  transition:  0.2s ease, transform 0.2s ease;
 }
 
 .footer-form button:hover {
