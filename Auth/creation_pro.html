@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style-connexion.css">
+    <link rel="stylesheet" href="style_connexion_pro.css">
     <title>CLYNK | Connexion</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="icon" type="image/x-icon" href="../ressources/favicon_io/android-chrome-512x512.png" />
@@ -40,23 +40,25 @@
                 et une interface conçue pour la sérénité.
             </p>
 
-            <div class="visual">
-                <div class="visual-icon iconv1">
-                    <i class="fa-solid fa-lock"></i>
+            <div class="visual-row">
+                <div class="visual">
+                    <div class="visual-icon iconv1">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div>
+                        <h3>HDS CERTIFIED</h3>
+                        <p>Hébergeur de Données de Santé</p>
+                    </div>
                 </div>
-                <div>
-                    <h3>HDS CERTIFIED</h3>
-                    <p>Hébergeur de Données de Santé</p>
-                </div>
-            </div>
 
-            <div class="visual">
-                <div class="visual-icon iconv2">
-                    <i class="fa-solid fa-shield-halved"></i>
-                </div>
-                <div>
-                    <h3>RGPD COMPLIANT</h3>
-                    <p>Protection stricte </p>
+                <div class="visual">
+                    <div class="visual-icon iconv2">
+                        <i class="fa-solid fa-gavel"></i>
+                    </div>
+                    <div>
+                        <h3>RGPD COMPLIANT</h3>
+                        <p>Protection stricte des données</p>
+                    </div>
                 </div>
             </div>
 
@@ -65,45 +67,51 @@
 
         <!-- Colonne droite -->
         <div class="inscription-right">
-            <h2 class="form-title">Créer un compte</h2>
-            <p class="form-subtitle">Complétez vos informations pour commencer votre suivi.</p>
+            <h2 class="form-title">Inscription Professionnel de Santé</h2>
 
             <div class="input-form">
 
                 <!-- Nom complet -->
-                <div class="form-group full">
-                    <label>NOM COMPLET</label>
+                <div class="form-group">
+                    <label>Nom complet</label>
                     <div class="input-wrapper">
-                        <i class="fa-solid fa-user"></i>
-                        <input type="text" placeholder="John Doe Dupont" />
+                        <input type="text" placeholder="Dr. AGBRAGBO Nadège" />
                     </div>
                 </div>
 
-                <!-- Email + Téléphone -->
+                <!-- Rôle + Numéro RPPS -->
                 <div class="form-row">
                     <div class="form-group">
-                        <label>E-MAIL</label>
-                        <div class="input-wrapper">
-                            <i class="fa-solid fa-envelope"></i>
-                            <input type="email" placeholder="JohnDoeDupont@gmail.com" />
-                        </div>
+                        <label>Rôle Professionnel</label>
+                        <select>
+                            <option>Médecin</option>
+                            <option>Infirmier</option>
+                            <option>Pharmacien</option>
+                            <option>Psychologue</option>
+                        </select>
                     </div>
                     <div class="form-group">
-                        <label>TÉLÉPHONE</label>
+                        <label>Numéro RPPS / ADELI</label>
                         <div class="input-wrapper">
-                            <i class="fa-solid fa-phone"></i>
-                            <input type="tel" placeholder="+225 6 00 00 00 00" />
+                            <input type="text" placeholder="10001234567" />
                         </div>
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label>Email professionnel</label>
+                    <div class="input-wrapper">
+                        <input type="email" placeholder="AGBRAGBO.dupont@sante.ci" />
                     </div>
                 </div>
 
                 <!-- Mot de passe -->
-                <div class="form-group full">
-                    <label>MOT DE PASSE</label>
+                <div class="form-group">
+                    <label>Mot de passe</label>
                     <div class="input-wrapper">
-                        <i class="fa-solid fa-lock"></i>
                         <input type="password" placeholder="••••••••••••" id="password-inscription" />
-                        <i class="fa-solid fa-eye-slash toggle-password" onclick="togglePasswordInscription()"></i>
+                        <i class="fa-solid fa-eye toggle-password" onclick="togglePasswordInscription()"></i>
                     </div>
                 </div>
 
@@ -111,31 +119,26 @@
                 <div class="cgu">
                     <input type="checkbox" id="cgu" />
                     <label for="cgu">
-                        J'accepte les <a href="#">Conditions d'utilisation</a> et la
-                        <a href="#">Politique de confidentialité</a> incluant le traitement sécurisé
-                        de mes données de santé.
+                        J'accepte les <a href="#">Conditions Générales d'Utilisation</a> et la
+                        <a href="#">Politique de Confidentialité</a>.
                     </label>
                 </div>
 
                 <!-- Bouton -->
                 <a href="#" class="btn-inscription">
-                    CRÉER MON COMPTE
-                    <i class="fa-solid fa-arrow-right"></i>
+                    CRÉER MON COMPTE PROFESSIONNEL
                 </a>
 
-                <!-- Déjà membre -->
-                <p class="already">Déjà membre ? <a href="connexion.html">Se connecter</a></p>
-                <p class="pro"><a href="#">Vous êtes un professionnel ?</a></p>
-
-                <!-- Badges -->
-                <div class="badges">
-                    <span><i class="fa-solid fa-lock"></i> Chiffrement AES-256</span>
-                    <span><i class="fa-solid fa-shield-halved"></i> HDS Compliance</span>
-                    <span><i class="fa-solid fa-file-shield"></i> RGPD Ready</span>
-                </div>
+                <!-- Vérification -->
+                <p class="verif-note">
+                    <i class="fa-solid fa-circle-check"></i>
+                    Vérification de l'identité via l'Annuaire Santé sous 24h.
+                </p>
 
             </div>
         </div>
+
+    </div>
 
     </div>
 </body>
