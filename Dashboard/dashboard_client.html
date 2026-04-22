@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dashboard_style.css">
+    <title>CLYNK | Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <img src="../ressources/logo Clynk1.png" alt="Logo" class="logo" />
+        <ul class="nav-links">
+            <li><a href="#">Dossier médical</a></li>
+            <li><a href="#">Téléconsultation</a></li>
+            <li><a href="#">Santé mentale</a></li>
+            <li><a href="#">Aide</a></li>
+        </ul>
+        <div class="nav-icons">
+            <a href="#"><i class="fa-solid fa-bell"></i></a>
+            <a href="#"><i class="fa-solid fa-gear"></i></a>
+            <div class="photo-avatar">
+                <img src="../ressources/Doctor avatar.jpg" alt="">
+            </div>
+        </div>
+    </nav>
+
+    <!-- Layout principal -->
+    <div class="layout">
+
+        <!-- Sidebar -->
+        <aside>
+            <p class="sidebar-title">BIENVENUE</p>
+            <p class="sidebar-info">votre portail médical</p>
+            <div class="sidebar-down">
+                <a href="#"><i class="fa-regular fa-circle-question"></i> Centre d'aide</a>
+                <a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i> Déconnexion</a>
+            </div>
+        </aside>
+
+        <!-- Contenu principal -->
+        <main>
+
+            <!-- Header -->
+            <div class="principal-header">
+                <div>
+                    <h1>Bonjour, Jean-Philippe</h1>
+                    <p>Heureux de vous revoir dans votre sanctuaire de santé.</p>
+                </div>
+
+                <!-- Carte QR -->
+                <div class="qr-carte">
+                    <img src="../ressources/qr-code.png" alt="QR Code" class="qr-img" />
+                    <p class="qr-title">Santé QR Sécurisé</p>
+                    <p class="qr-sub">Partagez votre dossier instantanément avec vos praticiens en urgence.</p>
+                    <a href="#" class="btn-qr">AFFICHER PLEIN ÉCRAN</a>
+                </div>
+            </div>
+
+            <!-- Cartes infos -->
+            <div class="cards-row">
+                <div class="card">
+                    <div class="card-top">
+                        <i class="fa-regular fa-calendar"></i>
+                        <span class="badge-demain">DEMAIN</span>
+                    </div>
+                    <p class="card-label">Prochain RDV</p>
+                    <p class="card-title">Dr. Aris Thémis</p>
+                    <p class="card-sub">Téléconsultation • 14:30</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-top">
+                        <i class="fa-regular fa-file-lines"></i>
+                        <span class="card-date">il y a 2j</span>
+                    </div>
+                    <p class="card-label">Dernier document</p>
+                    <p class="card-title">Analyse Sanguine</p>
+                    <p class="card-sub">Laboratoire Central</p>
+                </div>
+            </div>
+
+            <!-- Bilan mental -->
+            <div class="bilan">
+                <div class="bilan-icon">
+                    <i class="fa-solid fa-dumbbell"></i>
+                </div>
+                <div>
+                    <p class="bilan-title">Comment vous sentez-vous aujourd'hui ?</p>
+                    <p class="bilan-sub">Prenez 30 secondes pour votre bilan mental quotidien.</p>
+                    <div class="bilan-btns">
+                        <a href="#" class="btn-repondre">Répondre</a>
+                        <a href="#" class="btn-later">Plus tard</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Images bas -->
+            <div class="img-row">
+                <div class="img-card">
+                    <img src="../ressources/Dossier Médical.png" alt="Dossier médical" />
+                    <p>DOSSIER MÉDICAL</p>
+                </div>
+                <div class="img-card">
+                    <img src="../ressources/Rendez-vous.png" alt="Rendez-vous" />
+                    <p>RENDEZ-VOUS</p>
+                </div>
+                <div class="img-card">
+                    <img src="../ressources/Bien-être.png" alt="Santé mentale" />
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+</body>
+</html>
