@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="icon" type="image/x-icon" href="../ressources/favicon_io/android-chrome-512x512.png" />
 </head>
+
 <body>
 
     <!-- Header -->
@@ -38,18 +40,18 @@
                 <label>EMAIL OU IDENTIFIANT</label>
                 <div class="input-wrapper">
                     <i class="fa-solid fa-user"></i>
-                    <input type="text" placeholder="JohnDoeDupont@gmail.com" />
+                    <input type="text" id="email" placeholder="JohnDoeDupont@gmail.com" />
                 </div>
             </div>
 
-            <!-- Rôle -->
+            <!-- Rôle
             <div class="form-group">
                 <label>Rôle</label>
-                <select>
-                    <option value="">Médecin</option>
-                    <option value="">Patient</option>
+                <select id="role">
+                    <option value="Médecin">Médecin</option>
+                    <option value="Patient">Patient</option>
                 </select>
-            </div>
+            </div> -->
 
             <!-- Mot de passe -->
             <div class="form-group">
@@ -70,6 +72,10 @@
                 <label for="remember">Se rappeler de moi</label>
             </div>
 
+            <!-- Erreur -->
+            <p id="erreur" style="color: red; font-size: 12px; text-align: center;"></p>
+
+            
             <!-- Bouton connexion -->
             <a href="#" class="btn-connexion">
                 CONNEXION
@@ -91,4 +97,5 @@
     </div>
     <script src="../script/essentials.js" defer></script>
 </body>
+
 </html>
