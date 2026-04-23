@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
     <!-- Navbar -->
@@ -37,7 +38,9 @@
             <p class="sidebar-info">votre portail médical</p>
             <div class="sidebar-down">
                 <a href="#"><i class="fa-regular fa-circle-question"></i> Centre d'aide</a>
-                <a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i> Déconnexion</a>
+                <a href="#" id="btn-deconnexion">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i> Déconnexion
+                </a>
             </div>
         </aside>
 
@@ -47,7 +50,7 @@
             <!-- Header -->
             <div class="principal-header">
                 <div>
-                    <h1>Bonjour, Jean-Philippe</h1>
+                    <h1>Bonjour,</h1>
                     <p>Heureux de vous revoir dans votre sanctuaire de santé.</p>
                 </div>
 
@@ -115,6 +118,20 @@
 
         </main>
     </div>
+
+    <!-- Scripts à la fin -->
+    <script src="../script/auth.js" defer></script>
+    <script>
+        const user = protegerPage("client");
+        if (user) {
+            document.querySelector("h1").textContent = "Bonjour, " + user.nom;
+        }
+
+        document.getElementById("btn-deconnexion").addEventListener("click", function(e) {
+            e.preventDefault();
+            deconnecter();
+        });
+    </script>
 
 </body>
 </html>
