@@ -82,17 +82,17 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label>Rôle Professionnel</label>
-                        <select>
-                            <option>Médecin</option>
-                            <option>Infirmier</option>
-                            <option>Pharmacien</option>
-                            <option>Psychologue</option>
+                        <select id="role-pro">
+                            <option value="Médecin">Médecin</option>
+                            <option value="Infirmier">Infirmier</option>
+                            <option value="Pharmacien">Pharmacien</option>
+                            <option value="Psychologue">Psychologue</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>Numéro RPPS / ADELI</label>
                         <div class="input-wrapper">
-                            <input type="text" placeholder="10001234567" />
+                            <input type="text" id="rpps" placeholder="10001234567" />
                         </div>
                     </div>
                 </div>
@@ -101,7 +101,7 @@
                 <div class="form-group">
                     <label>Email professionnel</label>
                     <div class="input-wrapper">
-                        <input type="email" placeholder="AGBRAGBO.dupont@sante.ci" />
+                        <input type="email" id="email" placeholder="AGBRAGBO.dupont@sante.ci" />
                     </div>
                 </div>
 
@@ -110,7 +110,7 @@
                     <label>Mot de passe</label>
                     <div class="input-wrapper">
                         <input type="password" placeholder="••••••••••••" id="password-inscription" />
-                         <i class="fa-solid fa-eye-slash toggle-password" onclick="togglePassword()"></i>
+                        <i class="fa-solid fa-eye-slash toggle-password" onclick="togglePassword()"></i>
                     </div>
                 </div>
 
@@ -123,8 +123,12 @@
                     </label>
                 </div>
 
+                <!-- Erreur -->
+                <p id="erreur" style="color: red; font-size: 12px; text-align: center;"></p>
+
+
                 <!-- Bouton -->
-                <a href="#" class="btn-inscription">
+                <a href="#" class="btn-inscription" id="btn-creer-pro">
                     CRÉER MON COMPTE PROFESSIONNEL
                 </a>
 
