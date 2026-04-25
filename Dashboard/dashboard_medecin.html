@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dashboard_style_medecin.css">
+    <title>CLYNK | Dashboard Médecin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <img src="../ressources/logo Clynk1.png" alt="Logo" class="logo" />
+        <div class="recherche">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Rechercher un dossier..." />
+        </div>
+        <div class="nav-droite">
+            <i class="fa-solid fa-bell"></i>
+            <i class="fa-solid fa-gear"></i>
+            <div class="info-utilisateur">
+                <div>
+                    <p class="nom-utilisateur" id="user-nom">Dr. AGBRAGBO</p>
+                    <p class="role-utilisateur">CHEF DE CLINIQUE</p>
+                </div>
+                <div class="photo-avatar">
+                    <img src="../ressources/Doctor avatar.jpg" alt="" />
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Layout -->
+    <div class="disposition">
+
+        <!-- Sidebar -->
+        <aside>
+            <p class="sidebar-titre">BIENVENUE</p>
+            <p class="sidebar-info">votre portail médical</p>
+
+            <ul class="sidebar-menu">
+                <li class="actif"><a href="#"><i class="fa-solid fa-gauge"></i> Dashboard</a></li>
+                <li><a href="#"><i class="fa-solid fa-calendar"></i> Mes Rendez-vous</a></li>
+                <li><a href="#"><i class="fa-solid fa-folder"></i> Dossiers Patients</a></li>
+                <li><a href="#"><i class="fa-solid fa-prescription"></i> Ordonnances</a></li>
+                <li><a href="#"><i class="fa-solid fa-message"></i> Messages</a></li>
+            </ul>
+
+            <div class="sidebar-bas">
+                <a href="#"><i class="fa-regular fa-circle-question"></i> Centre d'aide</a>
+                <a href="#" id="btn-deconnexion">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i> Déconnexion
+                </a>
+            </div>
+        </aside>
+
+        <!-- Contenu principal -->
+        <main>
+
+            <!-- En-tête -->
+            <div class="entete-principal">
+                <div>
+                    <h1>Bienvenue, Dr. Agbragbo.</h1>
+                    <p>Voici un aperçu de votre activité médicale pour aujourd'hui.</p>
+                </div>
+                <a href="#" class="btn-nouvelle-consultation">
+                    <i class="fa-solid fa-plus"></i> Nouvelle consultation
+                </a>
+            </div>
+
+            <!-- Grille contenu -->
+            <div class="grille-contenu">
+
+                <!-- Colonne gauche -->
+                <div class="colonne-gauche">
+
+                    <!-- Carte aujourd'hui -->
+                    <div class="carte">
+                        <div class="carte-entete">
+                            <p class="carte-titre">Aujourd'hui</p>
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <div class="stat-element">
+                            <div>
+                                <p class="stat-etiquette">PATIENTS VUS</p>
+                                <p class="stat-valeur">14</p>
+                            </div>
+                            <span class="badge-present">PRÉSENT</span>
+                        </div>
+                        <div class="stat-element">
+                            <div>
+                                <p class="stat-etiquette">DOSSIERS À COMPLÉTER</p>
+                                <p class="stat-valeur orange">3</p>
+                            </div>
+                            <i class="fa-solid fa-file-circle-exclamation orange"></i>
+                        </div>
+                    </div>
+
+                    <!-- Actions rapides -->
+                    <div class="carte">
+                        <p class="carte-titre">Actions rapides</p>
+                        <a href="#" class="btn-action">
+                            <i class="fa-solid fa-file-medical"></i>
+                            Rédiger une ordonnance
+                        </a>
+                        <a href="#" class="btn-action">
+                            <i class="fa-solid fa-qrcode"></i>
+                            Dossier par scan QR
+                        </a>
+                    </div>
+
+                </div>
+
+                <!-- Colonne droite -->
+                <div class="colonne-droite">
+
+                    <!-- Prochaines consultations -->
+                    <div class="carte">
+                        <div class="carte-entete">
+                            <div>
+                                <p class="carte-titre">Prochaines consultations</p>
+                                <p class="carte-date">Lundi 14 Octobre</p>
+                            </div>
+                            <div class="fleches-navigation">
+                                <button><i class="fa-solid fa-chevron-left"></i></button>
+                                <button><i class="fa-solid fa-chevron-right"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="consultation consultation-active">
+                            <div class="heure-consultation">
+                                <p class="heure">14:30</p>
+                                <p class="type-consultation">Suivi post-opératoire • 15 min</p>
+                            </div>
+                            <div class="info-consultation">
+                                <p class="nom-patient">Mme Claire Lefebvre</p>
+                            </div>
+                            <a href="#" class="btn-lancer">Lancer</a>
+                        </div>
+
+                        <div class="consultation">
+                            <div class="heure-consultation">
+                                <p class="heure">15:00</p>
+                                <span class="badge-avenir">À VENIR</span>
+                            </div>
+                            <div class="info-consultation">
+                                <p class="nom-patient">M. Robert Durand</p>
+                                <p class="type-consultation">Consultation cardiologie • 30 min</p>
+                            </div>
+                        </div>
+
+                        <div class="consultation">
+                            <div class="heure-consultation">
+                                <p class="heure">15:45</p>
+                                <span class="badge-avenir">À VENIR</span>
+                            </div>
+                            <div class="info-consultation">
+                                <p class="nom-patient">Mme Sophie Martin</p>
+                                <p class="type-consultation">Renouvellement traitement • 15 min</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Historique récent -->
+                    <div class="carte">
+                        <div class="carte-entete">
+                            <p class="carte-titre">Historique récent</p>
+                            <a href="#" class="voir-tout">Voir tout</a>
+                        </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>PATIENT</th>
+                                    <th>DATE & HEURE</th>
+                                    <th>TYPE</th>
+                                    <th>STATUT</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="cellule-patient">
+                                            <div class="avatar-petit am">AM</div>
+                                            Antoine Moreau
+                                        </div>
+                                    </td>
+                                    <td>Auj. à 11:20</td>
+                                    <td>Généraliste</td>
+                                    <td><span class="badge-complete">COMPLÉTÉ</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="cellule-patient">
+                                            <div class="avatar-petit jp">JP</div>
+                                            Jean Petit
+                                        </div>
+                                    </td>
+                                    <td>Auj. à 10:45</td>
+                                    <td>Urgence</td>
+                                    <td><span class="badge-complete">COMPLÉTÉ</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../script/auth.js"></script>
+    <script>
+        const user = protegerPage("medecin");
+        if (user) {
+            document.getElementById("user-nom").textContent = user.nom;
+            document.querySelector("h1").textContent = "Bienvenue, " + user.nom + ".";
+        }
+
+        document.getElementById("btn-deconnexion").addEventListener("click", function(e) {
+            e.preventDefault();
+            deconnecter();
+        });
+    </script>
+
+</body>
+</html>

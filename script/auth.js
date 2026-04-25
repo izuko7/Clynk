@@ -41,5 +41,5 @@ function protegerPage(roleRequis) {
 
 function deconnecter() {
   localStorage.removeItem("userConnecte");
-  window.location.href = "../Auth/connexion.html";
+  window.location.href = "../index.html";
 }
