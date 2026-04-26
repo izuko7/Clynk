@@ -10,8 +10,9 @@ const usersDefaut = [
     id: 2,
     nom: "Dr. Aris Thémis",
     email: "aris@clynk.ci",
-    password: "1234",
+    password: "12345",
     role: "medecin",
+    rpps: "10001234567",
   },
 ];
 

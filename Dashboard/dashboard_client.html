@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="dashboard_style.css">
     <title>CLYNK | Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../ressources/favicon_io/android-chrome-512x512.png" />
 </head>
 
 <body>
@@ -56,10 +57,10 @@
 
                 <!-- Carte QR -->
                 <div class="qr-carte">
-                    <img src="../ressources/qr-code.png" alt="QR Code" class="qr-img" />
+                    <div id="qrcode-mini"></div>
                     <p class="qr-title">Santé QR Sécurisé</p>
                     <p class="qr-sub">Partagez votre dossier instantanément avec vos praticiens en urgence.</p>
-                    <a href="#" class="btn-qr">AFFICHER PLEIN ÉCRAN</a>
+                    <a href="scan.html" id="btn-plein-ecran" class="btn-qr">AFFICHER PLEIN ÉCRAN</a>
                 </div>
             </div>
 
@@ -119,13 +120,30 @@
         </main>
     </div>
 
-
-    <!-- Scripts à la fin -->
+    <!-- Scripts à la fin — chaque script UNE SEULE FOIS -->
     <script src="../script/auth.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script>
         const user = protegerPage("client");
+
         if (user) {
+            // Nom
             document.querySelector("h1").textContent = "Bonjour, " + user.nom;
+
+            // URL du scan
+            const urlScan = window.location.href.replace("dashboard_client.html", "scan.html") + "?id=" + user.id;
+
+            // Bouton plein écran
+            document.getElementById("btn-plein-ecran").href = "scan.html?id=" + user.id;
+
+            // QR Code
+            new QRCode(document.getElementById("qrcode-mini"), {
+                text: urlScan,
+                width: 80,
+                height: 80,
+                colorDark: "#1e3a6e",
+                colorLight: "#ffffff",
+            });
         }
 
         document.getElementById("btn-deconnexion").addEventListener("click", function(e) {

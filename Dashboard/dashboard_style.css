@@ -354,3 +354,14 @@ main {
   color: #fff;
   letter-spacing: 0.06em;
 }
+
+#qrcode-mini {
+    background: #fff;
+    padding: 6px;
+    border-radius: 8px;
+}
+
+#qrcode-mini img,
+#qrcode-mini canvas {
+    border-radius: 6px;
+}

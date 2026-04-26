@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLYNK | Dossier Patient</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #f0f2f5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 24px;
+        }
+
+        .carte-dossier {
+            background: #fff;
+            border-radius: 16px;
+            padding: 36px;
+            width: 100%;
+            max-width: 480px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .entete {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .entete img { height: 32px; }
+
+        .entete h2 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a2e;
+        }
+
+        .badge-verifie {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: #dcfce7;
+            color: #16a34a;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-left: auto;
+        }
+
+        .section-titre {
+            font-size: 11px;
+            font-weight: 700;
+            color: #9ca3af;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .info-ligne {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 16px;
+            background: #f9fafb;
+            border-radius: 8px;
+        }
+
+        .etiquette {
+            font-size: 11px;
+            font-weight: 600;
+            color: #9ca3af;
+            letter-spacing: 0.06em;
+        }
+
+        .valeur {
+            font-size: 13px;
+            font-weight: 500;
+            color: #1a1a2e;
+        }
+
+        .medecin-badge {
+            background: #eef2ff;
+            border-radius: 10px;
+            padding: 12px 16px;
+            font-size: 12px;
+            color: #3b5bdb;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-retour {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: #f4f5f7;
+            color: #4b5563;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 12px;
+            border-radius: 8px;
+            transition:  0.2s;
+        }
+
+        .btn-retour:hover { background: #e5e7eb; }
+    </style>
+</head>
+<body>
+
+    <div class="carte-dossier">
+
+        <div class="entete">
+            <img src="../ressources/logo Clynk1.png" alt="Logo" />
+            <h2>Dossier Patient</h2>
+            <span class="badge-verifie">
+                <i class="fa-solid fa-circle-check"></i> Vérifié
+            </span>
+        </div>
+
+        <!-- Infos patient -->
+        <p class="section-titre">Informations Patient</p>
+        <div id="infos-patient" style="display:flex; flex-direction:column; gap:8px;">
+            <!-- Rempli par JS -->
+        </div>
+
+        <!-- Médecin connecté -->
+        <div class="medecin-badge" id="medecin-info">
+            <!-- Rempli par JS -->
+        </div>
+
+        <a href="javascript:history.back()" class="btn-retour">
+            <i class="fa-solid fa-arrow-left"></i> Retour
+        </a>
+
+    </div>
+
+    <script src="../script/auth.js"></script>
+    <script>
+        const params    = new URLSearchParams(window.location.search);
+        const patientId = params.get("id");
+        const rpps      = params.get("rpps");
+
+        // Vérification — si pas de RPPS ou pas d'ID → refuser l'accès
+        if (!patientId || !rpps) {
+            window.location.href = "../Auth/connexion.html";
+        }
+
+        const tous = getUsers();
+
+        // Vérifier le médecin
+        const medecin = tous.find(u => u.role === "medecin" && u.rpps === rpps);
+        if (!medecin) {
+            window.location.href = "../Auth/connexion.html";
+        }
+
+        // Trouver le patient
+        const patient = tous.find(u => String(u.id) === String(patientId));
+        if (!patient) {
+            document.getElementById("infos-patient").innerHTML = "<p>Patient introuvable.</p>";
+        } else {
+            const infos = [
+                { etiquette: "NOM COMPLET",  valeur: patient.nom },
+                { etiquette: "EMAIL",         valeur: patient.email },
+                { etiquette: "TÉLÉPHONE",     valeur: patient.telephone || "Non renseigné" },
+                { etiquette: "ID PATIENT",    valeur: "#" + patient.id },
+            ];
+
+            const conteneur = document.getElementById("infos-patient");
+            infos.forEach(function(info) {
+                conteneur.innerHTML += `
+                    <div class="info-ligne">
+                        <span class="etiquette">${info.etiquette}</span>
+                        <span class="valeur">${info.valeur}</span>
+                    </div>
+                `;
+            });
+        }
+
+        // Afficher le médecin qui consulte
+        document.getElementById("medecin-info").innerHTML = `
+            <i class="fa-solid fa-user-doctor"></i>
+            Consulté par <strong>${medecin.nom}</strong> — RPPS : ${medecin.rpps}
+        `;
+    </script>
+
+</body>
+</html>
