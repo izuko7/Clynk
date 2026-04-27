@@ -127,30 +127,33 @@
         const user = protegerPage("client");
 
         if (user) {
-            // Nom
+            console.log("User connecté :", user);
+            console.log("ID :", user.id);
+
             document.querySelector("h1").textContent = "Bonjour, " + user.nom;
 
-            // URL du scan
-            const urlScan = window.location.href.replace("dashboard_client.html", "scan.html") + "?id=" + user.id;
+            const base = window.location.href.replace("dashboard_client.html", "");
+            const urlScan = base + "scan.html?id=" + user.id;
 
-            // Bouton plein écran
+            console.log("URL dans le QR :", urlScan);
+
             document.getElementById("btn-plein-ecran").href = "scan.html?id=" + user.id;
 
-            // QR Code
             new QRCode(document.getElementById("qrcode-mini"), {
                 text: urlScan,
-                width: 80,
-                height: 80,
-                colorDark: "#1e3a6e",
+                width: 150,
+                height: 150,
+                colorDark: "#000000",
                 colorLight: "#ffffff",
             });
         }
 
-        document.getElementById("btn-deconnexion").addEventListener("click", function(e) {
+        document.getElementById("btn-deconnexion").addEventListener("click", function (e) {
             e.preventDefault();
             deconnecter();
         });
     </script>
 
 </body>
+
 </html>

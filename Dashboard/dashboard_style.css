@@ -53,7 +53,6 @@ nav {
   font-size: 18px;
 }
 
-
 .photo-avatar {
   width: 34px;
   height: 34px;
@@ -356,12 +355,14 @@ main {
 }
 
 #qrcode-mini {
-    background: #fff;
-    padding: 6px;
-    border-radius: 8px;
+  background: #fff;
+  padding: 6px;
+  border-radius: 8px;
 }
 
 #qrcode-mini img,
 #qrcode-mini canvas {
-    border-radius: 6px;
+  border-radius: 6px;
+  width: 150px !important;
+  height: 150px !important;
 }

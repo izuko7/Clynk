@@ -7,6 +7,8 @@
     <title>CLYNK | Dashboard Médecin</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="icon" type="image/x-icon" href="../ressources/favicon_io/android-chrome-512x512.png" />
+    <!-- jsQR — marche en HTTP et en local -->
+    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
 </head>
 
 <body>
@@ -212,7 +214,7 @@
         </main>
     </div>
 
-    <!-- ✅ Modal ici dans le body -->
+    <!-- Modal scan QR -->
     <div id="modal-scan" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); z-index:1000; align-items:center; justify-content:center;">
         <div style="background:#fff; border-radius:16px; padding:32px; width:100%; max-width:420px; display:flex; flex-direction:column; align-items:center; gap:20px; text-align:center;">
             <h3 style="font-size:18px; font-weight:700; color:#1a1a2e;">Scanner un QR Code Patient</h3>
