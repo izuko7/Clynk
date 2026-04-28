@@ -44,3 +44,9 @@ function deconnecter() {
   localStorage.removeItem("userConnecte");
   window.location.href = "../index.html";
 }
+
+
+function logOut() {
+  localStorage.removeItem('userConnecte');
+  window.location.href = "../../index.html";
+}
