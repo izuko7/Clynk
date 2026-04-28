@@ -2,304 +2,195 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>CLYNK | Accueil</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link rel="icon" type="image/x-icon" href="ressources/favicon_io/android-chrome-512x512.png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>CLYNK | Accueil</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="icon" type="image/x-icon" href="ressources/favicon_io/android-chrome-512x512.png" />
 </head>
 
 <body>
-    <!-- Barre de navigation -->
-    <nav>
-        <img src="ressources/logo Clynk1.png" alt="Logo de Clynk" class="logo" />
-        <ul class="liens">
-            <li class="btn-contact"><a href="Auth/connexion.html">Connexion</a></li>
-            <li class="btn-contact">
-                <a href="Auth/creation.html">Inscription</a>
-            </li>
+
+  <!-- NAVIGATION -->
+  <nav class="nav">
+    <img src="ressources/logo Clynk1.png" alt="Logo de Clynk" class="nav__logo" />
+
+    <!-- Bouton burger -->
+    <button class="nav__burger" id="burger" aria-label="Ouvrir le menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <!-- Liens -->
+    <ul class="nav__liens" id="menu">
+      <li class="btn-contact"><a href="Auth/connexion.html">Connexion</a></li>
+      <li class="btn-contact"><a href="Auth/creation.html">Inscription</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero__gauche">
+      <div class="badge">
+        <i class="fa-solid fa-certificate"></i>
+        Prisme de précision avancé
+      </div>
+      <div class="hero__texte">
+        <h1>La santé connectée, repensée avec <span>Précision</span>.</h1>
+        <p>Vos dossiers médicaux, votre soutien en santé mentale et vos consultations en ligne réunis sur une plateforme unique, sécurisée et flexible, conçue pour l'avenir des soins.</p>
+      </div>
+      <div class="hero__boutons">
+        <a href="" class="btn-primaire">Explorer la plateforme <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="" class="btn-secondaire">Voir la démo</a>
+      </div>
+    </div>
+
+    <div class="hero__droite">
+      <div class="hero__image">
+        <img src="ressources/hero0.png" alt="Une doctoresse avec un patient" />
+        <div class="stat-carte">
+          <div class="stat-carte__icone"><i class="fa-solid fa-briefcase-medical"></i></div>
+          <div class="stat-carte__info">
+            <span class="stat-carte__label">Consultations</span>
+            <span class="stat-carte__valeur">15K Patients</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION : PRISE EN CHARGE -->
+  <div class="section-fonctionnalites">
+    <div class="section-fonctionnalites__entete">
+      <h2>Une prise en charge complète</h2>
+      <p>Des outils pensés pour les patients et les professionnels de la santé, garantissant une continuité des soins optimale.</p>
+    </div>
+    <div class="section-fonctionnalites__grille">
+      <div class="carte-fonctionnalite">
+        <div class="carte-fonctionnalite__icone icone-bleu"><i class="fa-solid fa-file-medical"></i></div>
+        <h3>Dossier Médical</h3>
+        <p>Centralisez vos antécédents, vos ordonnances et résultats d'examens en un lieu unique et sécurisé.</p>
+      </div>
+      <div class="carte-fonctionnalite">
+        <div class="carte-fonctionnalite__icone icone-teal"><i class="fa-solid fa-video"></i></div>
+        <h3>Téléconsultation</h3>
+        <p>Consultez votre médecin où que vous soyez via votre interface vidéo haute définition sécurisée.</p>
+      </div>
+      <div class="carte-fonctionnalite">
+        <div class="carte-fonctionnalite__icone icone-vert"><i class="fa-solid fa-brain"></i></div>
+        <h3>Santé Mentale</h3>
+        <p>Un accès simplifié à des psychologues certifiés pour un accompagnement personnalisé et bienveillant.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION : IDENTITÉ SANTÉ -->
+  <div class="section-identite">
+    <div class="section-identite__contenu">
+      <div class="section-identite__texte">
+        <h2>Votre Identité Santé au bout des doigts.</h2>
+        <p>Accédez instantanément à votre profil médical via notre technologie QR Code sécurisée. Présentez simplement votre code aux professionnels de santé pour un partage fluide et sans erreur.</p>
+        <div class="section-identite__points">
+          <span><i class="fa-solid fa-circle-check"></i> Scan sécurisé par les professionnels</span>
+          <span><i class="fa-solid fa-circle-check"></i> Mise à jour en temps réel des données</span>
+          <span><i class="fa-solid fa-circle-check"></i> Confidentialité totale des accès</span>
+        </div>
+      </div>
+      <div class="section-identite__image">
+        <img src="ressources/hero_background-removebg-preview.png" alt="Main tenant un téléphone avec QR Code" />
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION : NORMES -->
+  <div class="section-normes">
+    <div class="section-normes__grille">
+      <div class="norme"><i class="fa-solid fa-shield-halved"></i><p>HDS Compliance</p></div>
+      <div class="norme"><i class="fa-solid fa-file-shield"></i><p><span>RGPD</span> Ready</p></div>
+      <div class="norme"><i class="fa-solid fa-lock"></i><p>Chiffrement AES-256</p></div>
+      <div class="norme"><i class="fa-solid fa-cloud"></i><p>Infrastructure Cloud</p></div>
+    </div>
+  </div>
+
+  <!-- CARROUSEL PARTENAIRES -->
+  <div class="carrousel">
+    <div class="carrousel__groupe">
+      <div class="carrousel__carte"><img src="ressources/logo_partnair/eclatNaturel.png" alt="" /></div>
+      <div class="carrousel__carte"><img src="ressources/logo_partnair/logo_Arnard_Dn-removebg-preview.png" alt="" /></div>
+      <div class="carrousel__carte"><img src="ressources/logo_partnair/fertile_Plus-removebg-preview.png" alt="" /></div>
+      <div class="carrousel__carte"><img src="ressources/logo_partnair/logo_cura-removebg-preview.png" alt="" /></div>
+      <div class="carrousel__carte"><img src="ressources/logo_partnair/logoZebi.png" alt="" /></div>
+      <div class="carrousel__carte"><img src="ressources/logo_partnair/Medical_Logo__1___1___1_-removebg-preview.png" alt="" /></div>
+      <div class="carrousel__carte"><img src="ressources/logo_partnair/bebefood.png" alt="" /></div>
+      <div class="carrousel__carte"><img src="ressources/logo_partnair/suivimamn-logo-removebg-preview (1).png" alt="" /></div>
+    </div>
+    <div aria-hidden class="carrousel__groupe">
+      <div class="carrousel__carte"><img src="ressources/logo_partnair/santepoche-removebg-preview.png" alt="" /></div>
+      <div class="carrousel__carte"><img src="ressources/logo_partnair/eclatNaturel.png" alt="" /></div>
+      <div class="carrousel__carte"><img src="ressources/logo_partnair/logo_Arnard_Dn-removebg-preview.png" alt="" /></div>
+      <div class="carrousel__carte"><img src="ressources/logo_partnair/fertile_Plus-removebg-preview.png" alt="" /></div>
+      <div class="carrousel__carte"><img src="ressources/logo_partnair/logo_cura-removebg-preview.png" alt="" /></div>
+      <div class="carrousel__carte"><img src="ressources/logo_partnair/logoZebi.png" alt="" /></div>
+      <div class="carrousel__carte"><img src="ressources/logo_partnair/Medical_Logo__1___1___1_-removebg-preview.png" alt="" /></div>
+      <div class="carrousel__carte"><img src="ressources/logo_partnair/logo_cura-removebg-preview.png" alt="" /></div>
+    </div>
+  </div>
+
+  <!-- SECTION : APPEL À L'ACTION -->
+  <div class="section-cta">
+    <h2 class="section-cta__titre">Prêt à transformer votre parcours de soin ?</h2>
+    <p class="section-cta__texte">Rejoignez des milliers d'utilisateurs qui ont déjà choisi pour une gestion sereine de leur santé.</p>
+    <a href="/Auth/creation.html" class="btn-cta">CRÉER MON COMPTE GRATUIT</a>
+  </div>
+
+  <!-- PIED DE PAGE -->
+  <footer class="pied-de-page">
+    <div class="pied-de-page__contenu">
+
+      <div class="pied-de-page__colonne">
+        <img src="ressources/logo Clynk1.png" alt="Logo Clynk" class="pied-de-page__logo" />
+        <p class="pied-de-page__description">Excellence et innovation dans le parcours de soin. Au service de l'Afrique.</p>
+        <div class="pied-de-page__reseaux">
+          <a href="#"><i class="fa-solid fa-globe"></i></a>
+          <a href="#"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+
+      <div class="pied-de-page__colonne">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#">Accueil</a></li>
+          <li><a href="#">À propos</a></li>
+          <li><a href="#">Dossier médical</a></li>
+          <li><a href="#">Aide</a></li>
         </ul>
-    </nav>
+      </div>
 
-    <!-- Section Hero -->
-    <div class="hero">
-        <!-- Colonne gauche -->
-        <div class="hero-left">
-            <div class="badge">
-                <i class="fa-solid fa-certificate"></i>
-                Prisme de précision avancé
-            </div>
+      <div class="pied-de-page__colonne">
+        <h4>Contactez-nous</h4>
+        <ul class="pied-de-page__contact">
+          <li><i class="fa-solid fa-location-dot"></i> Abidjan, Côte d'Ivoire</li>
+          <li><i class="fa-solid fa-phone"></i> +225 27 00 00 00 00</li>
+          <li><i class="fa-solid fa-envelope"></i> info@clynk-tech.com</li>
+        </ul>
+      </div>
 
-            <div class="text-hero">
-                <h1>La santé connectée, repensée avec <span>Précision</span>.</h1>
-                <p>
-                    Vos dossiers médicaux, votre soutien en santé mentale et vos
-                    consultations en ligne réunis sur une plateforme unique, sécurisée
-                    et flexible, conçue pour l'avenir des soins.
-                </p>
-            </div>
-
-            <div class="button-hero">
-                <a href="" class="btn-primary">
-                    Explorer la plateforme
-                    <i class="fa-solid fa-arrow-right"></i>
-                </a>
-                <a href="" class="btn-secondary">Voir la démo</a>
-            </div>
+      <div class="pied-de-page__colonne">
+        <h4>Newsletter</h4>
+        <p class="pied-de-page__newsletter-texte">Restez informé(e) de nos dernières actualités et recherches médicales.</p>
+        <div class="pied-de-page__formulaire">
+          <input type="email" placeholder="Adresse email" />
+          <button>Souscrire</button>
         </div>
+      </div>
 
-        <!-- Colonne droite -->
-        <div class="hero-right">
-            <div class="img-hero">
-                <img src="ressources/hero0.png" alt="Une doctoresse avec un patient" />
-                <div class="stat-card">
-                    <div class="stat-icon">
-                        <i class="fa-solid fa-briefcase-medical"></i>
-                    </div>
-                    <div class="stat-info">
-                        <span class="stat-label">Consultations</span>
-                        <span class="stat-value">15K Patients</span>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
-
-    <!-- Section une prise en charge complète -->
-    <div class="section1">
-        <div class="section1-header">
-            <h2>Une prise en charge complète</h2>
-            <p>
-                Des outils pensés pour les patients et les professionnels de la santé,
-                garantissant une continuité des soins optimale.
-            </p>
-        </div>
-        <div class="feature">
-            <div class="row">
-                <div class="element">
-                    <div class="element-icon icon-bleu">
-                        <i class="fa-solid fa-file-medical"></i>
-                    </div>
-                    <h3>Dossier Médical</h3>
-                    <p>
-                        Centralisez vos antécédents, vos ordonnances et résultats
-                        d'examens en un lieu unique et sécurisé.
-                    </p>
-                </div>
-
-                <div class="element">
-                    <div class="element-icon icon-tea">
-                        <i class="fa-solid fa-video"></i>
-                    </div>
-                    <h3>Téléconsultation</h3>
-                    <p>
-                        Consultez votre médecin où que vous soyez via votre interface
-                        vidéo haute définition sécurisée.
-                    </p>
-                </div>
-
-                <div class="element">
-                    <div class="element-icon icon-vert">
-                        <i class="fa-solid fa-brain"></i>
-                    </div>
-                    <h3>Santé Mentale</h3>
-                    <p>
-                        Un accès simplifié à des psychologues certifiés pour un
-                        accompagnement personnalisé et bienveillant.
-                    </p>
-                </div>
-            </div>
-        </div>
+    <div class="pied-de-page__bas">
+      <p>© 2026 Bits Entreprise. Tous droits réservés.</p>
     </div>
+  </footer>
 
-    <!-- Section 2 : Votre identité Santé -->
-    <div class="section2">
-        <div class="section2-general">
-            <!-- Colonne gauche : texte -->
-            <div class="text-section2">
-                <h2>Votre Identité Santé au bout des doigts.</h2>
-                <p>
-                    Accédez instantanément à votre profil médical via notre technologie
-                    QR Code sécurisée. Présentez simplement votre code aux
-                    professionnels de santé pour un partage fluide et sans erreur.
-                </p>
-                <div class="info">
-                    <span>
-                        <i class="fa-solid fa-circle-check"></i>
-                        Scan sécurisé par les professionnels
-                    </span>
-                    <span>
-                        <i class="fa-solid fa-circle-check"></i>
-                        Mise à jour en temps réel des données
-                    </span>
-                    <span>
-                        <i class="fa-solid fa-circle-check"></i>
-                        Confidentialité totale des accès
-                    </span>
-                </div>
-            </div>
-            <div class="img-section2">
-                <img src="ressources/hero_background-removebg-preview.png"
-                    alt="Main tenant un téléphone avec QR Code" />
-            </div>
-        </div>
-    </div>
+  <script src="script/essentials.js" defer></script>
 
-    <!-- Section norme -->
-    <div class="norme-section">
-        <div class="row-element">
-            <div class="element1">
-                <i class="fa-solid fa-shield-halved"></i>
-                <p>HDS Compliance</p>
-            </div>
-            <div class="element1">
-                <i class="fa-solid fa-file-shield"></i>
-                <p><span>RGPD</span> Ready</p>
-            </div>
-            <div class="element1">
-                <i class="fa-solid fa-lock"></i>
-                <p>Chiffrement AES-256</p>
-            </div>
-            <div class="element1">
-                <i class="fa-solid fa-cloud"></i>
-                <p>Infrastructure Cloud</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Partenaires -->
-
-    <div class="carousel">
-        <div class="group">
-            <div class="card">
-                <img src="ressources/logo_partnair/eclatNaturel.png" alt="" />
-            </div>
-            <div class="card">
-                <img src="ressources/logo_partnair/logo_Arnard_Dn-removebg-preview.png" alt="" />
-            </div>
-            <div class="card">
-                <img src="ressources/logo_partnair/fertile_Plus-removebg-preview.png" alt="" />
-            </div>
-            <div class="card">
-                <img src="ressources/logo_partnair/logo_cura-removebg-preview.png" alt="" />
-            </div>
-            <div class="card">
-                <img src="ressources/logo_partnair/logoZebi.png" alt="" />
-            </div>
-            <div class="card">
-                <img src="ressources/logo_partnair/Medical_Logo__1___1___1_-removebg-preview.png" alt="" />
-            </div>
-            <div class="card">
-                <img src="ressources/logo_partnair/bebefood.png" alt="" />
-            </div>
-            <div class="card">
-                <img src="ressources/logo_partnair/suivimamn-logo-removebg-preview (1).png" alt="" />
-            </div>
-        </div>
-        <div aria-hidden class="group">
-             <div class="card">
-                <img src="ressources/logo_partnair/santepoche-removebg-preview.png" alt="" />
-            </div>
-            <div class="card">
-                <img src="ressources/logo_partnair/eclatNaturel.png" alt="" />
-            </div>
-            <div class="card">
-                <img src="ressources/logo_partnair/logo_Arnard_Dn-removebg-preview.png" alt="" />
-            </div>
-            <div class="card">
-                <img src="ressources/logo_partnair/fertile_Plus-removebg-preview.png" alt="" />
-            </div>
-            <div class="card">
-                <img src="ressources/logo_partnair/logo_cura-removebg-preview.png" alt="" />
-            </div>
-            <div class="card">
-                <img src="ressources/logo_partnair/logoZebi.png" alt="" />
-            </div>
-            <div class="card">
-                <img src="ressources/logo_partnair/Medical_Logo__1___1___1_-removebg-preview.png" alt="" />
-            </div>
-            <div class="card">
-                <img src="ressources/logo_partnair/logo_cura-removebg-preview.png" alt="" />
-            </div>
-        </div>
-    </div>
-
-    <!-- Ready -->
-    <div class="Ready">
-        <h2 class="Ready-title">Prêt à transformer votre parcours de soin ?</h2>
-        <p class="Ready-text">
-            Rejoingnez des milliers d'utilisateurs qui ont déjà choisi pour une
-            gestion sereine de leur santé.
-        </p>
-        <a href="/Auth/creation.html" class="btn-ready">CRER MON COMPTE GRATUIT</a>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-main">
-            <!-- Colonne 1 : Logo + description -->
-            <div class="footer-col">
-                <img src="ressources/logo Clynk1.png" alt="Logo Clynk" class="footer-logo" />
-                <p class="footer-desc">
-                    Excellence et innovation dans le parcours de soin. Au service de
-                    l'Afrique.
-                </p>
-                <div class="footer-socials">
-                    <a href="#"><i class="fa-solid fa-globe"></i></a>
-                    <a href="#"><i class="fa-solid fa-envelope"></i></a>
-                </div>
-            </div>
-
-            <!-- Colonne 2 : Navigation -->
-            <div class="footer-col">
-                <h4>Navigation</h4>
-                <ul>
-                    <li><a href="#">Accueil</a></li>
-                    <li><a href="#">A propos</a></li>
-                    <li><a href="#">Dossier médical</a></li>
-                    <li><a href="#">Aide</a></li>
-                </ul>
-            </div>
-
-            <!-- Colonne 3 : Contact -->
-            <div class="footer-col">
-                <h4>Contactez-nous</h4>
-                <ul class="footer-contact">
-                    <li>
-                        <i class="fa-solid fa-location-dot"></i>
-                        Abidjan, Côte d'Ivoire
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-phone"></i>
-                        +225 27 00 00 00 00
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-envelope"></i>
-                        info@clynk-tech.com
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Colonne 4 : Newsletter -->
-            <div class="footer-col">
-                <h4>Newsletter</h4>
-                <p class="footer-newsletter-text">
-                    Restez informé(e) de nos dernières actualités et recherches
-                    médicales.
-                </p>
-                <div class="footer-form">
-                    <input type="email" placeholder="Adresse email" />
-                    <button>Souscrire</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Bas du footer -->
-        <div class="footer-bottom">
-            <p>© 2026 Bits Entreprise. Tous droits réservés.</p>
-        </div>
-    </footer>
 </body>
-
 </html>

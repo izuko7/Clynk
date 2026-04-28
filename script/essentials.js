@@ -26,3 +26,14 @@ function togglePasswordConnexion(){
          incon1.classList.replace('fa-eye', 'fa-eye-slash');
     }
 }
+
+// burgur bouton page accueil 
+
+const burger = document.getElementById('burger');
+    const menu = document.getElementById('menu');
+    burger.addEventListener('click', () => {
+      menu.classList.toggle('ouvert');
+      const icone = burger.querySelector('i');
+      icone.classList.toggle('fa-bars');
+      icone.classList.toggle('fa-xmark');
+    });
