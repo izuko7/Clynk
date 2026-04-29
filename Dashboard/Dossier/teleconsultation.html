@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="teleconsultation.css">
+    <title>CLYNK | Téléconsultation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<script src="../../script/essentials.js"></script>
+
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <img src="../../ressources/logo Clynk1.png" alt="Logo" class="logo" />
+        <ul class="nav-liens">
+            <li><a href="medical.html">Dossier médicale</a></li>
+            <li><a href="teleconsultation.html" class="actif">Téléconsultation</a></li>
+            <li><a href="#">Santé mentale</a></li>
+            <li><a href="#">Aide</a></li>
+        </ul>
+        <div class="nav-icones">
+            <i class="fa-solid fa-bell"></i>
+            <i class="fa-solid fa-gear"></i>
+            <div class="avatar"></div>
+        </div>
+    </nav>
+
+    <!-- Layout -->
+    <div class="disposition">
+
+        <!-- Sidebar -->
+        <aside>
+            <p class="sidebar-titre">BIENVENUE</p>
+            <p class="sidebar-info">votre portail médical</p>
+            <a href="#" class="btn-rdv-sidebar">
+                PRENDRE RDV
+            </a>
+            <div class="sidebar-bas">
+                <a href="#"><i class="fa-regular fa-circle-question"></i> Centre d'aide</a>
+                <a class="element-nav" href="#" id="btn-deconnexion"><i class="fa-solid fa-right-from-bracket"></i>
+                    Déconnexion
+                </a>
+        </aside>
+
+        <!-- Contenu -->
+        <main>
+
+            <!-- En-tête -->
+            <div class="entete">
+                <div>
+                    <h1>Vos soins, partout.</h1>
+                    <p>Gérez vos rendez-vous médicaux en ligne avec simplicité et sécurité.</p>
+                </div>
+                <a href="#" class="btn-nouveau-rdv">
+                    <i class="fa-solid fa-plus"></i> PRENDRE UN NOUVEAU RENDEZ-VOUS
+                </a>
+            </div>
+
+            <!-- Grille principale -->
+            <div class="grille">
+
+                <!-- Colonne gauche -->
+                <div class="colonne-gauche">
+
+                    <!-- Rendez-vous à venir -->
+                    <div class="section-titre">
+                        <span>Rendez-vous à venir</span>
+                        <i class="fa-regular fa-calendar"></i>
+                        <span class="badge-prochain">3 Prochains</span>
+                    </div>
+
+                    <!-- RDV principal -->
+                    <div class="rdv-principal">
+                        <div class="rdv-avatar">
+                            <img src="../../ressources/User avatar.jpg" alt="Dr. Jean-Pierre Dupont" />
+                        </div>
+                        <div class="rdv-info">
+                            <p class="rdv-nom">Dr. Jean-Pierre Dupont</p>
+                            <p class="rdv-specialite">Cardiologue • Centre Médical de Paris</p>
+                            <p class="rdv-date">
+                                <i class="fa-solid fa-calendar"></i> Demain, 14 Oct
+                                <i class="fa-solid fa-clock"></i> 10:30
+                            </p>
+                        </div>
+                        <a href="#" class="btn-rejoindre">
+                            <i class="fa-solid fa-video"></i> Rejoindre l'appel
+                        </a>
+                    </div>
+
+                    <!-- RDV secondaires -->
+                    <div class="rdv-liste">
+                        <div class="rdv-carte">
+                            <p class="rdv-date-small">JEUDI 16 OCTOBRE • 09:15</p>
+                            <p class="rdv-nom-small">Dr. Sophie Martin</p>
+                            <p class="rdv-spec-small">Dermatologue</p>
+                            <a href="#" class="btn-details">Détails du rendez-vous</a>
+                        </div>
+                        <div class="rdv-carte">
+                            <p class="rdv-date-small">LUNDI 20 OCTOBRE • 16:00</p>
+                            <p class="rdv-nom-small">Dr. Marc Leroy</p>
+                            <p class="rdv-spec-small">Médecin Généraliste</p>
+                            <a href="#" class="btn-details">Détails du rendez-vous</a>
+                        </div>
+                    </div>
+
+                    <!-- Assistance -->
+                    <div class="assistance">
+                        <div>
+                            <p class="assistance-titre">Besoin d'une assistance immédiate ?</p>
+                            <p class="assistance-sous">Nos conseillers santé sont disponibles 24h/24 pour vous guider.
+                            </p>
+                        </div>
+                        <a href="#" class="btn-support">CONTACTER LE SUPPORT</a>
+                    </div>
+
+                </div>
+
+                <!-- Colonne droite — Historique -->
+                <div class="colonne-droite">
+                    <div class="historique">
+                        <div class="historique-entete">
+                            <i class="fa-solid fa-clock-rotate-left"></i>
+                            <p class="historique-titre">Historique</p>
+                        </div>
+
+                        <div class="historique-item">
+                            <div class="historique-point"></div>
+                            <div>
+                                <p class="historique-date">05 SEPT 2023</p>
+                                <p class="historique-nom">Consultation ORL</p>
+                                <p class="historique-medecin">Dr. Valérie Roche</p>
+                                <a href="#" class="historique-lien">
+                                    <i class="fa-solid fa-file"></i> Compte-rendu
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="historique-item">
+                            <div class="historique-point"></div>
+                            <div>
+                                <p class="historique-date">12 AOÛT 2023</p>
+                                <p class="historique-nom">Suivi Annuel</p>
+                                <p class="historique-medecin">Dr. Jean-Pierre Dupont</p>
+                                <a href="#" class="historique-lien">
+                                    <i class="fa-solid fa-file-prescription"></i> Ordonnance
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="historique-item">
+                            <div class="historique-point"></div>
+                            <div>
+                                <p class="historique-date">20 JUIN 2023</p>
+                                <p class="historique-nom">Analyse Sanguine</p>
+                                <p class="historique-medecin">Labo BioSanté</p>
+                                <a href="#" class="historique-lien">
+                                    <i class="fa-solid fa-file-pdf"></i> Résultats (PDF)
+                                </a>
+                            </div>
+                        </div>
+
+                        <a href="#" class="voir-historique">Voir tout l'historique →</a>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+    <script src="../../script/auth.js"></script>
+    <script>
+
+        const user = getUserConnecte();
+
+        if (!user || user.role !== "client") {
+            window.location.href = "../../Auth/connexion.html";
+        }
+
+        // if (user) {
+        //     document.getElementById("titre-bienvenue").textContent = "Bonjour, " + user.nom;
+        //     document.getElementById("patient-id").textContent = "ID: #" + user.id;
+        // }
+        console.log(getUserConnecte())
+
+        document.getElementById("btn-deconnexion").addEventListener("click", function (e) {
+                e.preventDefault();
+                logOut();
+            });
+    </script>
+
+</body>
+
+</html>
