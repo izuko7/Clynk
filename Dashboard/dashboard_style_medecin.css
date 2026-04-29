@@ -8,7 +8,9 @@ body {
     color: #1a1a2e;
 }
 
-/* NAVBAR */
+/* =====================
+   NAVBAR
+===================== */
 nav {
     display: flex;
     align-items: center;
@@ -17,6 +19,18 @@ nav {
     background: #fff;
     border-bottom: 1px solid #e8eaf0;
     gap: 16px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.btn-burger {
+    display: none; /* caché sur desktop */
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #4b5563;
+    cursor: pointer;
 }
 
 .logo { height: 36px; width: auto; }
@@ -69,7 +83,6 @@ nav {
 .role-utilisateur {
     font-size: 10px;
     color: #9ca3af;
-    text-align: right;
     letter-spacing: 0.05em;
 }
 
@@ -87,14 +100,18 @@ nav {
     object-fit: cover;
 }
 
-/* LAYOUT */
+/* =====================
+   LAYOUT
+===================== */
 .disposition {
     display: grid;
     grid-template-columns: 180px 1fr;
     min-height: calc(100vh - 61px);
 }
 
-/* SIDEBAR */
+/* =====================
+   SIDEBAR
+===================== */
 aside {
     background: #fff;
     border-right: 1px solid #e8eaf0;
@@ -160,7 +177,9 @@ aside {
 
 .sidebar-bas a:hover { color: #1a1a2e; }
 
-/* MAIN */
+/* =====================
+   MAIN
+===================== */
 main {
     padding: 28px 32px;
     display: flex;
@@ -172,18 +191,13 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
-.entete-principal h1 {
-    font-size: 22px;
-    font-weight: 700;
-}
+.entete-principal h1 { font-size: 22px; font-weight: 700; }
 
-.entete-principal p {
-    font-size: 13px;
-    color: #6b7280;
-    margin-top: 4px;
-}
+.entete-principal p { font-size: 13px; color: #6b7280; margin-top: 4px; }
 
 .btn-nouvelle-consultation {
     display: flex;
@@ -202,7 +216,9 @@ main {
 
 .btn-nouvelle-consultation:hover { background: #162d56; transform: translateY(-2px); }
 
-/* GRILLE */
+/* =====================
+   GRILLE
+===================== */
 .grille-contenu {
     display: grid;
     grid-template-columns: 280px 1fr;
@@ -216,7 +232,9 @@ main {
     gap: 16px;
 }
 
-/* CARTE */
+/* =====================
+   CARTE
+===================== */
 .carte {
     background: #fff;
     border-radius: 14px;
@@ -234,17 +252,8 @@ main {
     color: #6b7280;
 }
 
-.carte-titre {
-    font-size: 14px;
-    font-weight: 600;
-    color: #1a1a2e;
-}
-
-.carte-date {
-    font-size: 12px;
-    color: #9ca3af;
-    margin-top: 2px;
-}
+.carte-titre { font-size: 14px; font-weight: 600; color: #1a1a2e; }
+.carte-date  { font-size: 12px; color: #9ca3af; margin-top: 2px; }
 
 /* STATS */
 .stat-element {
@@ -263,12 +272,7 @@ main {
     letter-spacing: 0.06em;
 }
 
-.stat-valeur {
-    font-size: 28px;
-    font-weight: 700;
-    color: #1a1a2e;
-}
-
+.stat-valeur { font-size: 28px; font-weight: 700; color: #1a1a2e; }
 .stat-valeur.orange, .orange { color: #f97316; }
 
 .badge-present {
@@ -319,24 +323,10 @@ main {
 }
 
 .heure-consultation { min-width: 60px; }
-
-.heure {
-    font-size: 14px;
-    font-weight: 700;
-    color: #1a1a2e;
-}
-
-.nom-patient {
-    font-size: 13px;
-    font-weight: 600;
-    color: #1a1a2e;
-}
-
-.type-consultation {
-    font-size: 11px;
-    color: #9ca3af;
-    margin-top: 2px;
-}
+.heure { font-size: 14px; font-weight: 700; color: #1a1a2e; }
+.nom-patient { font-size: 13px; font-weight: 600; color: #1a1a2e; }
+.type-consultation { font-size: 11px; color: #9ca3af; margin-top: 2px; }
+.info-consultation { flex: 1; }
 
 .badge-avenir {
     font-size: 9px;
@@ -347,8 +337,6 @@ main {
     border-radius: 20px;
 }
 
-.info-consultation { flex: 1; }
-
 .btn-lancer {
     background: #1e3a6e;
     color: #fff;
@@ -358,14 +346,12 @@ main {
     padding: 8px 16px;
     border-radius: 6px;
     transition: background 0.2s;
+    white-space: nowrap;
 }
 
 .btn-lancer:hover { background: #162d56; }
 
-.fleches-navigation {
-    display: flex;
-    gap: 6px;
-}
+.fleches-navigation { display: flex; gap: 6px; }
 
 .fleches-navigation button {
     width: 28px;
@@ -382,11 +368,7 @@ main {
 .fleches-navigation button:hover { background: #f4f5f7; }
 
 /* TABLE */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 13px;
-}
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
 
 thead th {
     text-align: left;
@@ -422,6 +404,7 @@ tbody td {
     font-size: 10px;
     font-weight: 700;
     color: #fff;
+    flex-shrink: 0;
 }
 
 .am { background: #3b5bdb; }
@@ -444,3 +427,88 @@ tbody td {
 }
 
 .voir-tout:hover { text-decoration: underline; }
+
+/* =====================
+   RESPONSIVE — TABLETTE
+===================== */
+@media (max-width: 1024px) {
+    .grille-contenu {
+        grid-template-columns: 1fr;
+    }
+
+    .disposition {
+        grid-template-columns: 160px 1fr;
+    }
+
+    .recherche { max-width: 200px; }
+
+    .info-utilisateur div:first-child { display: none; }
+}
+
+/* =====================
+   RESPONSIVE — MOBILE
+===================== */
+@media (max-width: 768px) {
+
+    /* Burger visible */
+    .btn-burger { display: block; }
+
+    /* Navbar */
+    nav { padding: 12px 16px; }
+    .recherche { display: none; }
+    .nav-droite { gap: 12px; }
+    .info-utilisateur div:first-child { display: none; }
+
+    /* Sidebar cachée par défaut */
+    .disposition {
+        grid-template-columns: 1fr;
+    }
+
+    aside {
+        position: fixed;
+        top: 61px;
+        left: -100%;
+        width: 240px;
+        height: calc(100vh - 61px);
+        z-index: 200;
+        transition: left 0.3s ease;
+        box-shadow: 4px 0 20px rgba(0,0,0,0.1);
+    }
+
+    /* Sidebar ouverte via JS */
+    aside.ouvert {
+        left: 0;
+    }
+
+    /* Main pleine largeur */
+    main { padding: 20px 16px; }
+
+    /* Entête */
+    .entete-principal { flex-direction: column; align-items: flex-start; }
+    .btn-nouvelle-consultation { width: 100%; justify-content: center; }
+
+    /* Grille */
+    .grille-contenu { grid-template-columns: 1fr; }
+
+    /* Table responsive */
+    thead { display: none; }
+
+    tbody tr {
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        border-radius: 10px;
+        padding: 12px;
+        margin-bottom: 8px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    tbody td {
+        border-bottom: none;
+        padding: 4px 0;
+    }
+
+    /* Consultations */
+    .consultation { flex-wrap: wrap; }
+    .btn-lancer { width: 100%; text-align: center; justify-content: center; margin-top: 8px; }
+}

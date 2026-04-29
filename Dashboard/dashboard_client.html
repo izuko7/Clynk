@@ -1,17 +1,16 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="dashboard_style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dashboard_style.css" />
     <title>CLYNK | Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="icon" type="image/x-icon" href="../ressources/favicon_io/android-chrome-512x512.png" />
 </head>
 
 <body>
-
     <!-- Navbar -->
     <nav>
         <img src="../ressources/logo Clynk1.png" alt="Logo" class="logo" />
@@ -25,14 +24,25 @@
             <a href="#"><i class="fa-solid fa-bell"></i></a>
             <a href="#"><i class="fa-solid fa-gear"></i></a>
             <div class="photo-avatar">
-                <img src="../ressources/User avatar.jpg" alt="">
+                <img src="../ressources/User avatar.jpg" alt="" />
             </div>
         </div>
+        <button class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </button>
     </nav>
+
+    <!-- hamburgur menu pour le responsive -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="Dossier/medical.html"><i class="fa-solid fa-file-medical"></i> Dossier médical</a>
+        <a href="Dossier/teleconsultation.html"><i class="fa-solid fa-video"></i> Téléconsultation</a>
+        <a href="Dossier/sante_mentale.html"><i class="fa-solid fa-brain"></i> Santé mentale</a>
+        <a href="#"><i class="fa-solid fa-circle-question"></i> Aide</a>
+        <a href="#"  id="btn-deconnexion"><i class="fa-solid fa-arrow-right-from-bracket"></i> Déconnexion</a>
+    </div>
 
     <!-- Layout principal -->
     <div class="layout">
-
         <!-- Sidebar -->
         <aside>
             <p class="sidebar-title">BIENVENUE</p>
@@ -47,7 +57,6 @@
 
         <!-- Contenu principal -->
         <main>
-
             <!-- Header -->
             <div class="principal-header">
                 <div>
@@ -59,7 +68,10 @@
                 <div class="qr-carte">
                     <div id="qrcode-mini"></div>
                     <p class="qr-title">Santé QR Sécurisé</p>
-                    <p class="qr-sub">Partagez votre dossier instantanément avec vos praticiens en urgence.</p>
+                    <p class="qr-sub">
+                        Partagez votre dossier instantanément avec vos praticiens en
+                        urgence.
+                    </p>
                     <a href="scan.html" id="btn-plein-ecran" class="btn-qr">AFFICHER PLEIN ÉCRAN</a>
                 </div>
             </div>
@@ -94,7 +106,9 @@
                 </div>
                 <div>
                     <p class="bilan-title">Comment vous sentez-vous aujourd'hui ?</p>
-                    <p class="bilan-sub">Prenez 30 secondes pour votre bilan mental quotidien.</p>
+                    <p class="bilan-sub">
+                        Prenez 30 secondes pour votre bilan mental quotidien.
+                    </p>
                     <div class="bilan-btns">
                         <a href="#" class="btn-repondre">Répondre</a>
                         <a href="#" class="btn-later">Plus tard</a>
@@ -116,11 +130,11 @@
                     <img src="../ressources/Bien-être.png" alt="Santé mentale" />
                 </div>
             </div>
-
         </main>
     </div>
 
     <script src="../script/auth.js"></script>
+    <script src="../script/essentials.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script>
         const user = protegerPage("client");
@@ -136,7 +150,8 @@
 
             console.log("URL dans le QR :", urlScan);
 
-            document.getElementById("btn-plein-ecran").href = "scan.html?id=" + user.id;
+            document.getElementById("btn-plein-ecran").href =
+                "scan.html?id=" + user.id;
 
             new QRCode(document.getElementById("qrcode-mini"), {
                 text: urlScan,
@@ -147,12 +162,20 @@
             });
         }
 
-        document.getElementById("btn-deconnexion").addEventListener("click", function (e) {
-            e.preventDefault();
-            deconnecter();
-        });
-    </script>
+        const hamburger = document.getElementById("hamburger");
+        const mobileMenu = document.getElementById("mobile-menu");
 
+        hamburger.addEventListener("click", function () {
+            mobileMenu.classList.toggle("open");
+        });
+
+        document
+            .getElementById("btn-deconnexion")
+            .addEventListener("click", function (e) {
+                e.preventDefault();
+                deconnecter();
+            });
+    </script>
 </body>
 
 </html>

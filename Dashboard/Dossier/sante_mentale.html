@@ -7,6 +7,7 @@
     <title>CLYNK | Santé Mentale</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../../ressources/favicon_io/android-chrome-512x512.png" />
 </head>
 <body>
 
@@ -37,7 +38,9 @@
             <p class="sidebar-info">votre portail médical</p>
             <div class="sidebar-bas">
                 <a href="#"><i class="fa-regular fa-circle-question"></i> Centre d'aide</a>
-                <a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i> Déconnexion</a>
+                 <a class="element-nav" href="#" id="btn-deconnexion"><i class="fa-solid fa-right-from-bracket"></i>
+                    Déconnexion
+                </a>
             </div>
         </aside>
 
@@ -166,6 +169,25 @@
 
         </main>
     </div>
+    <script src="../../script/auth.js"></script>
+    <script>
 
+        const user = getUserConnecte();
+
+        if (!user || user.role !== "client") {
+            window.location.href = "../../Auth/connexion.html";
+        }
+
+        // if (user) {
+        //     document.getElementById("titre-bienvenue").textContent = "Bonjour, " + user.nom;
+        //     document.getElementById("patient-id").textContent = "ID: #" + user.id;
+        // }
+        console.log(getUserConnecte())
+
+        document.getElementById("btn-deconnexion").addEventListener("click", function (e) {
+                e.preventDefault();
+                logOut();
+            });
+    </script>
 </body>
 </html>

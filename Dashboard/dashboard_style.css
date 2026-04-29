@@ -24,7 +24,6 @@ nav {
 
 .logo {
   height: 36px;
-  width: auto;
 }
 
 .nav-links {
@@ -57,7 +56,6 @@ nav {
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background: #3b5bdb;
   overflow: hidden;
 }
 
@@ -125,7 +123,7 @@ main {
   gap: 20px;
 }
 
-/* Header + QR */
+/* HEADER + QR */
 .principal-header {
   display: flex;
   justify-content: space-between;
@@ -144,7 +142,7 @@ main {
   margin-top: 4px;
 }
 
-/* Carte QR */
+/* CARTE QR */
 .qr-carte {
   background: #2a4494;
   border-radius: 16px;
@@ -156,13 +154,6 @@ main {
   align-items: center;
   gap: 8px;
   text-align: center;
-}
-
-.qr-img {
-  width: 80px;
-  height: 80px;
-  border-radius: 8px;
-  object-fit: cover;
 }
 
 .qr-title {
@@ -187,7 +178,7 @@ main {
   letter-spacing: 0.06em;
   padding: 8px 14px;
   border-radius: 6px;
-  transition: 0.2s;
+  transition: background 0.2s;
 }
 
 .btn-qr:hover {
@@ -229,11 +220,7 @@ main {
   border-radius: 20px;
 }
 
-.card-date {
-  font-size: 11px;
-  color: #9ca3af;
-}
-
+.card-date,
 .card-label {
   font-size: 11px;
   color: #9ca3af;
@@ -242,7 +229,6 @@ main {
 .card-title {
   font-size: 14px;
   font-weight: 600;
-  color: #1a1a2e;
 }
 
 .card-sub {
@@ -278,7 +264,6 @@ main {
 .bilan-title {
   font-size: 13px;
   font-weight: 600;
-  color: #1a1a2e;
 }
 
 .bilan-sub {
@@ -354,6 +339,7 @@ main {
   letter-spacing: 0.06em;
 }
 
+/* QR CODE */
 #qrcode-mini {
   background: #fff;
   padding: 6px;
@@ -365,4 +351,121 @@ main {
   border-radius: 6px;
   width: 150px !important;
   height: 150px !important;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+
+.hamburger span {
+  width: 22px;
+  height: 2px;
+  background: #4b5563;
+  border-radius: 2px;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: #fff;
+  border-bottom: 1px solid #e8eaf0;
+  padding: 12px 16px;
+  gap: 4px;
+}
+
+.mobile-menu a {
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  color: #4b5563;
+  padding: 10px 12px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mobile-menu a:hover {
+  background: #f0f4ff;
+  color: #3b5bdb;
+}
+.mobile-menu.open {
+  display: flex;
+}
+
+@media (max-width: 900px) {
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* RESPONSIVE*/
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  aside {
+    display: none;
+  }
+
+  main {
+    padding: 20px;
+  }
+
+  .principal-header {
+    flex-direction: column;
+  }
+
+  .qr-carte {
+    width: 100%;
+  }
+
+  .cards-row,
+  .bilan,
+  .img-row {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  nav {
+    padding: 12px 16px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  main {
+    padding: 16px;
+  }
+
+  .principal-header h1 {
+    font-size: 20px;
+  }
+
+  .cards-row {
+    grid-template-columns: 1fr;
+  }
+
+  .img-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .bilan {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .bilan-btns {
+    flex-wrap: wrap;
+  }
 }

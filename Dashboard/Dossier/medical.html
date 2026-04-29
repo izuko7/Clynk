@@ -1,255 +1,232 @@
 <!doctype html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Clynk | Dossier Médical</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="../../ressources/favicon_io/android-chrome-512x512.png"
-    />
-    <link rel="stylesheet" href="style.css" />
 
-    
-    <script src="../../script/essentials.js"></script>
-  </head>
-  <body>
-    <!-- NAVIGATION -->
-    <nav class="nav">
-      <img
-        src="../../ressources/logo Clynk1.png"
-        alt="Logo Clynk"
-        class="nav__logo"
-      />
-      <div class="nav__liens">
-        <a href="medical.html" class="actif">Dossier médicale</a>
-        <a href="teleconsultation.html">Téléconsultation</a>
-        <a href="sante_mentale.html">Santé mentale</a>
-        <a href="#">Aide</a>
-      </div>
-      <div class="nav__icones">
-        <span><i class="fa-solid fa-bell"></i></span>
-        <span><i class="fa-solid fa-gear"></i></span>
-        <div class="photo-avatar">
-                <img src="../../ressources/User avatar.jpg" alt="">
-        </div>
-      </div>
-    </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clynk | Dossier Médical</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="icon" type="image/x-icon" href="../../ressources/favicon_io/android-chrome-512x512.png" />
+  <link rel="stylesheet" href="style.css" />
 
-    <!-- MISE EN PAGE -->
-    <div class="mise-en-page">
-      <!-- BARRE LATÉRALE -->
-      <aside class="barre-laterale">
-        <div class="patient__label">PORTAIL PATIENT</div>
-        <!--  id ajouté -->
-        <div class="patient__id" id="patient-id"></div>
 
-        <a class="element-nav" href="#"
-          ><i class="fa-solid fa-chart-simple"></i> Résumé de Santé</a
-        >
-        <a class="element-nav" href="#"
-          ><i class="fa-solid fa-file-lines"></i> Ordonnances</a
-        >
-        <a class="element-nav actif" href="#"
-          ><i class="fa-solid fa-flask"></i> Résultats de Labo</a
-        >
-        <a class="element-nav" href="#"
-          ><i class="fa-solid fa-syringe"></i> Vaccinations</a
-        >
-        <a class="element-nav" href="#"
-          ><i class="fa-solid fa-triangle-exclamation"></i> Allergies</a
-        >
+  <script src="../../script/essentials.js"></script>
+</head>
 
-        <div class="barre-laterale__bas">
-          <button class="btn-rdv">PRENDRE RDV</button>
-          <a class="element-nav" href="#"
-            ><i class="fa-solid fa-circle-question"></i> Centre d'aide</a
-          >
-          
-          <a class="element-nav" href="#" id="btn-deconnexion"
-            ><i class="fa-solid fa-right-from-bracket"></i> 
-            Déconnexion
-          </a>
-        </div>
-      </aside>
-
-      <!-- CONTENU PRINCIPAL -->
-      <main class="contenu">
-        <!-- COLONNE GAUCHE -->
-        <div class="colonne-gauche">
-          <div>
-            
-            <h1 id="titre-bienvenue">Dossier Médical</h1>
-            <p class="sous-titre">
-              Gérez vos données de santé en toute sécurité. Accès rapide et<br />sécurisé
-              à vos informations essentielles.
-            </p>
-          </div>
-
-          <div>
-            <div class="titre-section">
-              <h2>
-                <span class="badge"
-                  ><i class="fa-solid fa-star-of-life"></i
-                ></span>
-                Dossiers médicaux
-              </h2>
-              <a href="#" class="voir-tout">voir tout</a>
-            </div>
-
-            <div class="liste-documents">
-              <div class="document">
-                <div class="document__icone rouge">
-                  <i class="fa-solid fa-file-medical"></i>
-                </div>
-                <div class="document__info">
-                  <strong>Bilan Sanguin Complet</strong>
-                  <span>Labo Bio-Santé • 12 Oct 2023</span>
-                </div>
-                <div class="document__actions">
-                  <button title="Voir"><i class="fa-solid fa-eye"></i></button>
-                  <button title="Télécharger">
-                    <i class="fa-solid fa-download"></i>
-                  </button>
-                </div>
-              </div>
-
-              <div class="document">
-                <div class="document__icone bleu">
-                  <i class="fa-solid fa-prescription"></i>
-                </div>
-                <div class="document__info">
-                  <strong>Ordonnance - Traitement HTA</strong>
-                  <span>Dr. Martin Durand • 05 Oct 2023</span>
-                </div>
-                <div class="document__actions">
-                  <button title="Voir"><i class="fa-solid fa-eye"></i></button>
-                  <button title="Télécharger">
-                    <i class="fa-solid fa-download"></i>
-                  </button>
-                </div>
-              </div>
-
-              <div class="document">
-                <div class="document__icone vert">
-                  <i class="fa-solid fa-x-ray"></i>
-                </div>
-                <div class="document__info">
-                  <strong>Radiographie Thoracique</strong>
-                  <span>Centre Imagerie • 22 Sep 2023</span>
-                </div>
-                <div class="document__actions">
-                  <button title="Voir"><i class="fa-solid fa-eye"></i></button>
-                  <button title="Télécharger">
-                    <i class="fa-solid fa-download"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- COLONNE DROITE -->
-        <div class="colonne-droite">
-          <!-- QR CODE -->
-          <div class="banniere-qr">
-            <div class="banniere-qr__icone">
-              <i class="fa-solid fa-qrcode"></i>
-            </div>
-            <div class="banniere-qr__texte">
-              <strong>MON QR CODE SANTÉ</strong>
-              <span>Accès rapide professionnels</span>
-            </div>
-            <i class="fa-solid fa-chevron-right"></i>
-          </div>
-
-          <!-- PROFIL DE SANTÉ -->
-          <div class="carte-profil">
-            <h3>Profil de Santé</h3>
-
-            <div class="ligne-profil">
-              <div class="ligne-profil__icone icone-rouge">
-                <i class="fa-solid fa-droplet"></i>
-              </div>
-              <div class="ligne-profil__info">
-                <div class="etiquette">Groupe Sanguin</div>
-                <div class="valeur">A Rh+</div>
-              </div>
-            </div>
-
-            <div class="ligne-profil">
-              <div class="ligne-profil__icone icone-jaune">
-                <i class="fa-solid fa-triangle-exclamation"></i>
-              </div>
-              <div class="ligne-profil__info">
-                <div class="etiquette">Allergies</div>
-                <div class="etiquettes">
-                  <span class="etiquette-tag">Pénicilline</span>
-                  <span class="etiquette-tag">Arachides</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="ligne-profil">
-              <div class="ligne-profil__icone icone-bleu">
-                <i class="fa-solid fa-pills"></i>
-              </div>
-              <div class="ligne-profil__info">
-                <div class="etiquette">Traitements en Cours</div>
-                <ul class="traitements">
-                  <li>Lisinopril 10mg</li>
-                  <li>Vitamine D3</li>
-                </ul>
-              </div>
-            </div>
-
-            <button class="btn-mise-a-jour">Mettre à jour le profil</button>
-          </div>
-
-          <!-- SÉCURITÉ -->
-          <div class="carte-securite">
-            <i class="fa-solid fa-shield-halved icone-securite"></i>
-            <strong>HÉBERGEMENT CERTIFIÉ HDS</strong>
-            Vos données sont protégées par les plus hauts standards de sécurité
-            médicale en vigueur.
-            <div class="derniere-maj">
-              <i class="fa-solid fa-rotate"></i> DERNIÈRE MISE À JOUR : 15 NOV
-              2023
-            </div>
-          </div>
-        </div>
-      </main>
+<body>
+  <!-- NAVIGATION -->
+  <nav class="nav">
+    <img src="../../ressources/logo Clynk1.png" alt="Logo Clynk" class="nav__logo" />
+    <div class="nav__liens">
+      <a href="medical.html" class="actif">Dossier médicale</a>
+      <a href="teleconsultation.html">Téléconsultation</a>
+      <a href="sante_mentale.html">Santé mentale</a>
+      <a href="#">Aide</a>
     </div>
+    <div class="nav__icones">
+      <span><i class="fa-solid fa-bell"></i></span>
+      <span><i class="fa-solid fa-gear"></i></span>
+      <div class="photo-avatar">
+        <img src="../../ressources/User avatar.jpg" alt="">
+      </div>
+    </div>
+  </nav>
+
+  <!-- MISE EN PAGE -->
+  <div class="mise-en-page">
+    <!-- BARRE LATÉRALE -->
+    <aside class="barre-laterale">
+      <div class="patient__label">PORTAIL PATIENT</div>
+      <!--  id ajouté -->
+      <div class="patient__id" id="patient-id"></div>
+
+      <a class="element-nav" href="#"><i class="fa-solid fa-chart-simple"></i> Résumé de Santé</a>
+      <a class="element-nav" href="#"><i class="fa-solid fa-file-lines"></i> Ordonnances</a>
+      <a class="element-nav actif" href="#"><i class="fa-solid fa-flask"></i> Résultats de Labo</a>
+      <a class="element-nav" href="#"><i class="fa-solid fa-syringe"></i> Vaccinations</a>
+      <a class="element-nav" href="#"><i class="fa-solid fa-triangle-exclamation"></i> Allergies</a>
+
+      <div class="barre-laterale__bas">
+        <button class="btn-rdv">PRENDRE RDV</button>
+        <a class="element-nav" href="#"><i class="fa-solid fa-circle-question"></i> Centre d'aide</a>
+
+        <a class="element-nav" href="#" id="btn-deconnexion"><i class="fa-solid fa-right-from-bracket"></i>
+          Déconnexion
+        </a>
+      </div>
+    </aside>
+
+    <!-- CONTENU PRINCIPAL -->
+    <main class="contenu">
+      <!-- COLONNE GAUCHE -->
+      <div class="colonne-gauche">
+        <div>
+
+          <h1 id="titre-bienvenue">Dossier Médical</h1>
+          <p class="sous-titre">
+            Gérez vos données de santé en toute sécurité. Accès rapide et<br />sécurisé
+            à vos informations essentielles.
+          </p>
+        </div>
+
+        <div>
+          <div class="titre-section">
+            <h2>
+              <span class="badge"><i class="fa-solid fa-star-of-life"></i></span>
+              Dossiers médicaux
+            </h2>
+            <a href="#" class="voir-tout">voir tout</a>
+          </div>
+
+          <div class="liste-documents">
+            <div class="document">
+              <div class="document__icone rouge">
+                <i class="fa-solid fa-file-medical"></i>
+              </div>
+              <div class="document__info">
+                <strong>Bilan Sanguin Complet</strong>
+                <span>Labo Bio-Santé • 12 Oct 2023</span>
+              </div>
+              <div class="document__actions">
+                <button title="Voir"><i class="fa-solid fa-eye"></i></button>
+                <button title="Télécharger">
+                  <i class="fa-solid fa-download"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="document">
+              <div class="document__icone bleu">
+                <i class="fa-solid fa-prescription"></i>
+              </div>
+              <div class="document__info">
+                <strong>Ordonnance - Traitement HTA</strong>
+                <span>Dr. Martin Durand • 05 Oct 2023</span>
+              </div>
+              <div class="document__actions">
+                <button title="Voir"><i class="fa-solid fa-eye"></i></button>
+                <button title="Télécharger">
+                  <i class="fa-solid fa-download"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="document">
+              <div class="document__icone vert">
+                <i class="fa-solid fa-x-ray"></i>
+              </div>
+              <div class="document__info">
+                <strong>Radiographie Thoracique</strong>
+                <span>Centre Imagerie • 22 Sep 2023</span>
+              </div>
+              <div class="document__actions">
+                <button title="Voir"><i class="fa-solid fa-eye"></i></button>
+                <button title="Télécharger">
+                  <i class="fa-solid fa-download"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- COLONNE DROITE -->
+      <div class="colonne-droite">
+        <!-- QR CODE -->
+        <div class="banniere-qr">
+          <div class="banniere-qr__icone">
+            <i class="fa-solid fa-qrcode"></i>
+          </div>
+          <div class="banniere-qr__texte">
+            <strong>MON QR CODE SANTÉ</strong>
+            <span>Accès rapide professionnels</span>
+          </div>
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+
+        <!-- PROFIL DE SANTÉ -->
+        <div class="carte-profil">
+          <h3>Profil de Santé</h3>
+
+          <div class="ligne-profil">
+            <div class="ligne-profil__icone icone-rouge">
+              <i class="fa-solid fa-droplet"></i>
+            </div>
+            <div class="ligne-profil__info">
+              <div class="etiquette">Groupe Sanguin</div>
+              <div class="valeur">A Rh+</div>
+            </div>
+          </div>
+
+          <div class="ligne-profil">
+            <div class="ligne-profil__icone icone-jaune">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <div class="ligne-profil__info">
+              <div class="etiquette">Allergies</div>
+              <div class="etiquettes">
+                <span class="etiquette-tag">Pénicilline</span>
+                <span class="etiquette-tag">Arachides</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="ligne-profil">
+            <div class="ligne-profil__icone icone-bleu">
+              <i class="fa-solid fa-pills"></i>
+            </div>
+            <div class="ligne-profil__info">
+              <div class="etiquette">Traitements en Cours</div>
+              <ul class="traitements">
+                <li>Lisinopril 10mg</li>
+                <li>Vitamine D3</li>
+              </ul>
+            </div>
+          </div>
+
+          <button class="btn-mise-a-jour">Mettre à jour le profil</button>
+        </div>
+
+        <!-- SÉCURITÉ -->
+        <div class="carte-securite">
+          <i class="fa-solid fa-shield-halved icone-securite"></i>
+          <strong>HÉBERGEMENT CERTIFIÉ HDS</strong>
+          Vos données sont protégées par les plus hauts standards de sécurité
+          médicale en vigueur.
+          <div class="derniere-maj">
+            <i class="fa-solid fa-rotate"></i> DERNIÈRE MISE À JOUR : 15 NOV
+            2023
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
 
 
-    <!-- BOUTON FLOTTANT -->
-    <div class="btn-flottant"><i class="fa-solid fa-plus"></i></div>
-    <script src="../../script/auth.js"></script>
-    <script>
-    
-      const user = getUserConnecte();
+  <!-- BOUTON FLOTTANT -->
+  <div class="btn-flottant"><i class="fa-solid fa-plus"></i></div>
+  <script src="../../script/auth.js"></script>
+  <script>
 
-      if (!user || user.role !== "client") {
-        window.location.href = "../../Auth/connexion.html";
-      }
+    const user = getUserConnecte();
 
-      if (user) {
-        document.getElementById("titre-bienvenue").textContent = "Bonjour, " + user.nom;
-        document.getElementById("patient-id").textContent = "ID: #" + user.id;
-      }
-      console.log(getUserConnecte())
+    if (!user || user.role !== "client") {
+      window.location.href = "../../Auth/connexion.html";
+    }
 
-      document
-        .getElementById("btn-deconnexion")
-        .addEventListener("click", function (e) {
-          e.preventDefault();
-          logOut();
-        });
-    </script>
-  </body>
+    if (user) {
+      document.getElementById("titre-bienvenue").textContent = "Bonjour, " + user.nom;
+      document.getElementById("patient-id").textContent = "ID: #" + user.id;
+    }
+    console.log(getUserConnecte())
+
+    document
+      .getElementById("btn-deconnexion")
+      .addEventListener("click", function (e) {
+        e.preventDefault();
+        logOut();
+      });
+  </script>
+</body>
+
 </html>

@@ -1,202 +1,270 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CLYNK | Vérification RPPS</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="../ressources/favicon_io/android-chrome-512x512.png"
+    />
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            font-family: "Poppins", sans-serif;
-            background: #f0f2f5;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 24px;
-        }
+      body {
+        font-family: "Poppins", sans-serif;
+        background: #f0f2f5;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+      }
 
-        .carte {
-            background: #fff;
-            border-radius: 16px;
-            padding: 40px;
-            width: 100%;
-            max-width: 420px;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            text-align: center;
-        }
+      .carte {
+        background: #fff;
+        border-radius: 16px;
+        padding: 40px;
+        width: 100%;
+        max-width: 420px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        text-align: center;
+      }
 
-        .icone-verif {
-            width: 60px;
-            height: 60px;
-            background: #eef2ff;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #3b5bdb;
-            font-size: 24px;
-        }
+      .icone-verif {
+        width: 60px;
+        height: 60px;
+        background: #eef2ff;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #3b5bdb;
+        font-size: 24px;
+      }
 
-        h2 {
-            font-size: 20px;
-            font-weight: 700;
-            color: #1a1a2e;
-        }
+      h2 {
+        font-size: 20px;
+        font-weight: 700;
+        color: #1a1a2e;
+      }
 
-        .sous-titre {
-            font-size: 13px;
-            color: #6b7280;
-            line-height: 1.6;
-        }
+      .sous-titre {
+        font-size: 13px;
+        color: #6b7280;
+        line-height: 1.6;
+      }
 
-        .form-group {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            text-align: left;
-        }
+      .form-group {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        text-align: left;
+      }
 
-        .form-group label {
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 0.08em;
-            color: #374151;
-        }
+      .form-group label {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        color: #374151;
+      }
 
-        .input-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            background: #f9fafb;
-            border: 1px solid #e5e7eb;
-            border-radius: 8px;
-            padding: 12px 14px;
-            transition: border-color 0.2s;
-        }
+      .input-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: #f9fafb;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        padding: 12px 14px;
+        transition: border-color 0.2s;
+      }
 
-        .input-wrapper:focus-within { border-color: #3b5bdb; }
+      .input-wrapper:focus-within {
+        border-color: #3b5bdb;
+      }
 
-        .input-wrapper i { color: #9ca3af; font-size: 14px; }
+      .input-wrapper i {
+        color: #9ca3af;
+        font-size: 14px;
+      }
 
-        .input-wrapper input {
-            border: none;
-            background: transparent;
-            font-size: 13px;
-            font-family: "Poppins", sans-serif;
-            color: #1a1a2e;
-            width: 100%;
-            outline: none;
-        }
+      .input-wrapper input {
+        border: none;
+        background: transparent;
+        font-size: 13px;
+        font-family: "Poppins", sans-serif;
+        color: #1a1a2e;
+        width: 100%;
+        outline: none;
+      }
 
-        .input-wrapper input::placeholder { color: #9ca3af; }
+      .input-wrapper input::placeholder {
+        color: #9ca3af;
+      }
 
-        #erreur {
-            font-size: 12px;
-            color: #ef4444;
-            text-align: center;
-        }
+      #erreur {
+        font-size: 12px;
+        color: #ef4444;
+        text-align: center;
+      }
 
-        .btn-valider {
-            width: 100%;
-            background: #1e3a6e;
-            color: #fff;
-            border: none;
-            font-family: "Poppins", sans-serif;
-            font-size: 13px;
-            font-weight: 700;
-            padding: 14px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background 0.2s ease, transform 0.2s ease;
-        }
+      .btn-valider {
+        width: 100%;
+        background: #1e3a6e;
+        color: #fff;
+        border: none;
+        font-family: "Poppins", sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        padding: 14px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition:
+          0.2s ease,
+          transform 0.2s ease;
+      }
 
-        .btn-valider:hover {
-            background: #162d56;
-            transform: translateY(-2px);
-        }
+      .btn-valider:hover {
+        background: #162d56;
+        transform: translateY(-2px);
+      }
 
-        .badge-securise {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 11px;
-            color: #9ca3af;
-        }
+      .badge-securise {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 11px;
+        color: #9ca3af;
+      }
 
-        .badge-securise i { color: #0d9e75; }
+      .badge-securise i {
+        color: #0d9e75;
+      }
+      .header-connexion {
+        width: 100%;
+        max-width: 100%;
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        margin-bottom: 24px;
+        padding: 0 24px;
+      }
+      .header-connexion {
+        position: fixed;
+        top: 16px;
+        left: 24px;
+      }
+      .btn-retour {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 500;
+        color: #4b5563;
+        transition: color 0.2s ease;
+      }
+
+      .btn-retour:hover {
+        color: #1a1a2e;
+      }
+
+      .btn-retour i {
+        font-size: 18px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <!-- boutton retour -->
+    <div class="header-connexion">
+      <a href="../Dashboard/dashboard_medecin.html" class="btn-retour">
+        <i class="fa-solid fa-circle-arrow-left"></i>
+        Retour
+      </a>
+    </div>
 
     <div class="carte">
-        <div class="icone-verif">
-            <i class="fa-solid fa-shield-halved"></i>
+      <div class="icone-verif">
+        <i class="fa-solid fa-shield-halved"></i>
+      </div>
+
+      <h2>Vérification Professionnelle</h2>
+      <p class="sous-titre">
+        Entrez votre numéro RPPS pour accéder au dossier du patient.
+      </p>
+
+      <div class="form-group">
+        <label>NUMÉRO RPPS / ADELI</label>
+        <div class="input-wrapper">
+          <i class="fa-solid fa-id-card"></i>
+          <input type="text" id="rpps" placeholder="10001234567" />
         </div>
+      </div>
 
-        <h2>Vérification Professionnelle</h2>
-        <p class="sous-titre">Entrez votre numéro RPPS pour accéder au dossier du patient.</p>
+      <p id="erreur"></p>
 
-        <div class="form-group">
-            <label>NUMÉRO RPPS / ADELI</label>
-            <div class="input-wrapper">
-                <i class="fa-solid fa-id-card"></i>
-                <input type="text" id="rpps" placeholder="10001234567" />
-            </div>
-        </div>
+      <button class="btn-valider" id="btn-valider">ACCÉDER AU DOSSIER</button>
 
-        <p id="erreur"></p>
-
-        <button class="btn-valider" id="btn-valider">
-            ACCÉDER AU DOSSIER
-        </button>
-
-        <p class="badge-securise">
-            <i class="fa-solid fa-lock"></i>
-            Accès réservé aux professionnels de santé
-        </p>
+      <p class="badge-securise">
+        <i class="fa-solid fa-lock"></i>
+        Accès réservé aux professionnels de santé
+      </p>
     </div>
 
     <script src="../script/auth.js"></script>
     <script>
-        // Récupérer l'ID du patient depuis l'URL
-        const params = new URLSearchParams(window.location.search);
-        const patientId = params.get("id");
+      // Récupérer l'ID du patient depuis l'URL
+      const params = new URLSearchParams(window.location.search);
+      const patientId = params.get("id");
 
-        if (!patientId) {
-            window.location.href = "../Auth/connexion.html";
-        }
+      if (!patientId) {
+        window.location.href = "../Auth/connexion.html";
+      }
 
-        document.getElementById("btn-valider").addEventListener("click", function() {
-            const rpps   = document.getElementById("rpps").value.trim();
-            const erreur = document.getElementById("erreur");
+      document
+        .getElementById("btn-valider")
+        .addEventListener("click", function () {
+          const rpps = document.getElementById("rpps").value.trim();
+          const erreur = document.getElementById("erreur");
 
-            if (!rpps) {
-                erreur.textContent = "Veuillez entrer votre numéro RPPS.";
-                return;
-            }
+          if (!rpps) {
+            erreur.textContent = "Veuillez entrer votre numéro RPPS.";
+            return;
+          }
 
-            // Vérifier que le RPPS correspond à un médecin enregistré
-            const tous = getUsers();
-            const medecin = tous.find(u => u.role === "medecin" && u.rpps === rpps);
+          // Vérifier que le RPPS correspond à un médecin enregistré
+          const tous = getUsers();
+          const medecin = tous.find(
+            (u) => u.role === "medecin" && u.rpps === rpps,
+          );
 
-            if (!medecin) {
-                erreur.textContent = "Numéro RPPS invalide ou non reconnu.";
-                return;
-            }
+          if (!medecin) {
+            erreur.textContent = "Numéro RPPS invalide ou non reconnu.";
+            return;
+          }
 
-            // RPPS valide → rediriger vers le dossier du patient
-            window.location.href = "dossier_patient.html?id=" + patientId + "&rpps=" + rpps;
+          // RPPS valide → rediriger vers le dossier du patient
+          window.location.href =
+            "dossier_patient.html?id=" + patientId + "&rpps=" + rpps;
         });
     </script>
-
-</body>
+  </body>
 </html>
