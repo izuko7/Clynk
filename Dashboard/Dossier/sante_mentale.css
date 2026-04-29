@@ -66,6 +66,20 @@ nav {
   background: #3b5bdb;
 }
 
+.photo-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #3b5bdb;
+  overflow: hidden;
+}
+
+.photo-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* LAYOUT */
 .disposition {
   display: grid;
