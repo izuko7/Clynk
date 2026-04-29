@@ -579,3 +579,90 @@ select:focus {
   color: #1a1a2e;
   margin-bottom: 20px;
 }
+
+/* =====================
+   RESPONSIVE - À coller à la fin de style_connexion_pro.css
+===================== */
+
+/* Tablette */
+@media (max-width: 900px) {
+  .inscription-form {
+    grid-template-columns: 1fr;
+    min-height: unset;
+  }
+
+  .inscription-left {
+    padding: 40px 32px;
+  }
+
+  .inscription-title {
+    font-size: 34px;
+  }
+
+  .inscription-img {
+    display: none;
+  }
+
+  .inscription-right {
+    padding: 40px 32px;
+  }
+
+  .visual-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  body {
+    padding: 0;
+  }
+
+  .header-connexion {
+    padding: 12px 16px;
+    margin-bottom: 0;
+  }
+
+  .btn-retour {
+    font-size: 12px;
+  }
+
+  /* Inscription gauche */
+  .inscription-left {
+    padding: 28px 20px;
+    gap: 18px;
+  }
+
+  .inscription-title {
+    font-size: 26px;
+  }
+
+  /* Blocs visuels en colonne */
+  .visual-row {
+    grid-template-columns: 1fr;
+  }
+
+  .visual {
+    padding: 14px;
+  }
+
+  /* Inscription droite */
+  .inscription-right {
+    padding: 28px 20px;
+  }
+
+  .form-title {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  /* Rangée 2 colonnes → 1 colonne */
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* Select pleine largeur déjà défini, on s'assure */
+  select {
+    width: 100%;
+  }
+}
