@@ -9,13 +9,14 @@
   <link rel="icon" type="image/x-icon" href="../../ressources/favicon_io/android-chrome-512x512.png" />
   <link rel="stylesheet" href="style.css" />
 
-
   <script src="../../script/essentials.js"></script>
 </head>
 
 <body>
-  <!-- NAVIGATION -->
   <nav class="nav">
+    <button class="btn-burger" id="btn-burger">
+      <i class="fa-solid fa-bars"></i>
+    </button>
     <img src="../../ressources/logo Clynk1.png" alt="Logo Clynk" class="nav__logo" />
     <div class="nav__liens">
       <a href="medical.html" class="actif">Dossier médicale</a>
@@ -27,7 +28,7 @@
       <span><i class="fa-solid fa-bell"></i></span>
       <span><i class="fa-solid fa-gear"></i></span>
       <div class="photo-avatar">
-        <img src="../../ressources/User avatar.jpg" alt="">
+        <img src="../../ressources/User avatar.jpg" alt="" />
       </div>
     </div>
   </nav>
@@ -42,10 +43,13 @@
 
       <a class="element-nav" href="#"><i class="fa-solid fa-chart-simple"></i> Résumé de Santé</a>
       <a class="element-nav" href="#"><i class="fa-solid fa-file-lines"></i> Ordonnances</a>
-      <a class="element-nav actif" href="#"><i class="fa-solid fa-flask"></i> Résultats de Labo</a>
+      <a class="element-nav" href="#"><i class="fa-solid fa-flask"></i> Résultats de Labo</a>
       <a class="element-nav" href="#"><i class="fa-solid fa-syringe"></i> Vaccinations</a>
       <a class="element-nav" href="#"><i class="fa-solid fa-triangle-exclamation"></i> Allergies</a>
-
+      <a class="element-nav" href="medical.html" class="actif">Dossier médicale</a>
+      <a class="element-nav" class="element-nav" href="teleconsultation.html">Téléconsultation</a>
+      <a class="element-nav" href="sante_mentale.html">Santé mentale</a>
+      <a class="element-nav" href="#">Aide</a>
       <div class="barre-laterale__bas">
         <button class="btn-rdv">PRENDRE RDV</button>
         <a class="element-nav" href="#"><i class="fa-solid fa-circle-question"></i> Centre d'aide</a>
@@ -61,7 +65,6 @@
       <!-- COLONNE GAUCHE -->
       <div class="colonne-gauche">
         <div>
-
           <h1 id="titre-bienvenue">Dossier Médical</h1>
           <p class="sous-titre">
             Gérez vos données de santé en toute sécurité. Accès rapide et<br />sécurisé
@@ -202,12 +205,10 @@
     </main>
   </div>
 
-
   <!-- BOUTON FLOTTANT -->
   <div class="btn-flottant"><i class="fa-solid fa-plus"></i></div>
   <script src="../../script/auth.js"></script>
   <script>
-
     const user = getUserConnecte();
 
     if (!user || user.role !== "client") {
@@ -215,10 +216,17 @@
     }
 
     if (user) {
-      document.getElementById("titre-bienvenue").textContent = "Bonjour, " + user.nom;
+      document.getElementById("titre-bienvenue").textContent =
+        "Bonjour, " + user.nom;
       document.getElementById("patient-id").textContent = "ID: #" + user.id;
     }
-    console.log(getUserConnecte())
+    console.log(getUserConnecte());
+
+    document
+      .getElementById("btn-burger")
+      .addEventListener("click", function () {
+        document.querySelector(".barre-laterale").classList.toggle("ouvert");
+      });
 
     document
       .getElementById("btn-deconnexion")
