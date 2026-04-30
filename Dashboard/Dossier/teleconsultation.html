@@ -9,19 +9,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="../../ressources/favicon_io/android-chrome-512x512.png" />
+    <script src="../../script/essentials.js"></script>
 </head>
-<script src="../../script/essentials.js"></script>
 
 <body>
 
-    <!-- Navbar -->
     <nav>
         <img src="../../ressources/logo Clynk1.png" alt="Logo" class="logo" />
         <ul class="nav-liens">
             <li><a href="medical.html">Dossier médicale</a></li>
             <li><a href="teleconsultation.html" class="actif">Téléconsultation</a></li>
             <li><a href="sante_mentale.html">Santé mentale</a></li>
-            <li><a href="#">Aide</a></li>
+            <li><a href="aide.html">Aide</a></li>
         </ul>
         <div class="nav-icones">
             <i class="fa-solid fa-bell"></i>
@@ -30,29 +29,33 @@
                 <img src="../../ressources/User avatar.jpg" alt="">
             </div>
         </div>
+        <button class="btn-burger" id="btn-burger">
+            <i class="fa-solid fa-bars"></i>
+        </button>
     </nav>
 
-    <!-- Layout -->
     <div class="disposition">
 
-        <!-- Sidebar -->
-        <aside>
+        <aside id="sidebar">
             <p class="sidebar-titre">BIENVENUE</p>
             <p class="sidebar-info">votre portail médical</p>
-            <a href="#" class="btn-rdv-sidebar">
-                PRENDRE RDV
-            </a>
+            <a href="#" class="btn-rdv-sidebar">PRENDRE RDV</a>
+
+            <!-- Onglets de navigation visible sur mobile -->
+            <nav class="sidebar-nav">
+                <a href="medical.html">Dossier médicale</a>
+                <a href="teleconsultation.html" class="actif">Téléconsultation</a>
+                <a href="sante_mentale.html">Santé mentale</a>
+                <a href="aide.html">Aide</a>
+            </nav>
             <div class="sidebar-bas">
                 <a href="#"><i class="fa-regular fa-circle-question"></i> Centre d'aide</a>
-                <a class="element-nav" href="#" id="btn-deconnexion"><i class="fa-solid fa-right-from-bracket"></i>
-                    Déconnexion
-                </a>
+                <a href="#" id="btn-deconnexion"><i class="fa-solid fa-right-from-bracket"></i> Déconnexion</a>
+            </div>
         </aside>
 
-        <!-- Contenu -->
         <main>
 
-            <!-- En-tête -->
             <div class="entete">
                 <div>
                     <h1>Vos soins, partout.</h1>
@@ -63,26 +66,22 @@
                 </a>
             </div>
 
-            <!-- Grille principale -->
             <div class="grille">
 
-                <!-- Colonne gauche -->
                 <div class="colonne-gauche">
 
-                    <!-- Rendez-vous à venir -->
                     <div class="section-titre">
                         <span>Rendez-vous à venir</span>
                         <i class="fa-regular fa-calendar"></i>
                         <span class="badge-prochain">3 Prochains</span>
                     </div>
 
-                    <!-- RDV principal -->
                     <div class="rdv-principal">
                         <div class="rdv-avatar">
                             <img src="../../ressources/Doctor avatar.jpg" alt="Dr. Jean-Pierre Dupont" />
                         </div>
                         <div class="rdv-info">
-                            <p class="rdv-nom">Dr. Jean-Pierre Dupont</p>
+                            <p class="rdv-nom">Dr. Jean-Pierre LOROUGNON</p>
                             <p class="rdv-specialite">Cardiologue • Centre Médical de Paris</p>
                             <p class="rdv-date">
                                 <i class="fa-solid fa-calendar"></i> Demain, 14 Oct
@@ -94,7 +93,6 @@
                         </a>
                     </div>
 
-                    <!-- RDV secondaires -->
                     <div class="rdv-liste">
                         <div class="rdv-carte">
                             <p class="rdv-date-small">JEUDI 16 OCTOBRE • 09:15</p>
@@ -110,7 +108,6 @@
                         </div>
                     </div>
 
-                    <!-- Assistance -->
                     <div class="assistance">
                         <div>
                             <p class="assistance-titre">Besoin d'une assistance immédiate ?</p>
@@ -122,7 +119,6 @@
 
                 </div>
 
-                <!-- Colonne droite — Historique -->
                 <div class="colonne-droite">
                     <div class="historique">
                         <div class="historique-entete">
@@ -136,9 +132,7 @@
                                 <p class="historique-date">05 SEPT 2023</p>
                                 <p class="historique-nom">Consultation ORL</p>
                                 <p class="historique-medecin">Dr. Valérie Roche</p>
-                                <a href="#" class="historique-lien">
-                                    <i class="fa-solid fa-file"></i> Compte-rendu
-                                </a>
+                                <a href="#" class="historique-lien"><i class="fa-solid fa-file"></i> Compte-rendu</a>
                             </div>
                         </div>
 
@@ -148,9 +142,8 @@
                                 <p class="historique-date">12 AOÛT 2023</p>
                                 <p class="historique-nom">Suivi Annuel</p>
                                 <p class="historique-medecin">Dr. Jean-Pierre Dupont</p>
-                                <a href="#" class="historique-lien">
-                                    <i class="fa-solid fa-file-prescription"></i> Ordonnance
-                                </a>
+                                <a href="#" class="historique-lien"><i class="fa-solid fa-file-prescription"></i>
+                                    Ordonnance</a>
                             </div>
                         </div>
 
@@ -160,9 +153,8 @@
                                 <p class="historique-date">20 JUIN 2023</p>
                                 <p class="historique-nom">Analyse Sanguine</p>
                                 <p class="historique-medecin">Labo BioSanté</p>
-                                <a href="#" class="historique-lien">
-                                    <i class="fa-solid fa-file-pdf"></i> Résultats (PDF)
-                                </a>
+                                <a href="#" class="historique-lien"><i class="fa-solid fa-file-pdf"></i> Résultats
+                                    (PDF)</a>
                             </div>
                         </div>
 
@@ -173,25 +165,23 @@
             </div>
         </main>
     </div>
+
     <script src="../../script/auth.js"></script>
     <script>
-
         const user = getUserConnecte();
 
         if (!user || user.role !== "client") {
             window.location.href = "../../Auth/connexion.html";
         }
 
-        // if (user) {
-        //     document.getElementById("titre-bienvenue").textContent = "Bonjour, " + user.nom;
-        //     document.getElementById("patient-id").textContent = "ID: #" + user.id;
-        // }
-        console.log(getUserConnecte())
+        document.getElementById("btn-burger").addEventListener("click", function () {
+            document.getElementById("sidebar").classList.toggle("ouvert");
+        });
 
         document.getElementById("btn-deconnexion").addEventListener("click", function (e) {
-                e.preventDefault();
-                logOut();
-            });
+            e.preventDefault();
+            logOut();
+        });
     </script>
 
 </body>

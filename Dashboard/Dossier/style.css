@@ -27,16 +27,6 @@ body {
   z-index: 100;
 }
 
-.btn-burger {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 20px;
-  color: #555;
-  cursor: pointer;
-  flex-shrink: 0;
-}
-
 .nav__logo {
   height: 32px;
   flex-shrink: 0;
@@ -83,7 +73,6 @@ body {
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background: #3b5bdb;
   overflow: hidden;
 }
 
@@ -93,13 +82,25 @@ body {
   object-fit: cover;
 }
 
-/*MISE EN PAGE*/
+/* Burger toujours à droite, caché sur desktop */
+.btn-burger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #555;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+/* MISE EN PAGE */
 .mise-en-page {
   display: flex;
   min-height: calc(100vh - 64px);
 }
 
-/* BARRE LATÉRALE*/
+/* BARRE LATÉRALE */
 .barre-laterale {
   width: 220px;
   background: #fff;
@@ -140,6 +141,11 @@ body {
 .element-nav:hover {
   background: #f0f2ff;
 }
+
+.cache{
+  display: none;
+}
+
 .element-nav.actif {
   background: #e8eaff;
   color: #2d3ae8;
@@ -173,7 +179,7 @@ body {
   background: #1e2bc4;
 }
 
-/* CONTENU PRINCIPAL*/
+/* CONTENU PRINCIPAL */
 .contenu {
   flex: 1;
   padding: 36px 32px;
@@ -270,10 +276,12 @@ h1 {
   background: #fff0f0;
   color: #e05555;
 }
+
 .document__icone.bleu {
   background: #f0f4ff;
   color: #2d3ae8;
 }
+
 .document__icone.vert {
   background: #f0fff4;
   color: #2da85a;
@@ -358,6 +366,7 @@ h1 {
   font-size: 13px;
   color: #555;
 }
+
 .banniere-qr > .fa-chevron-right {
   color: #aaa;
 }
@@ -398,10 +407,12 @@ h1 {
   background: #fff0f0;
   color: #e05555;
 }
+
 .icone-jaune {
   background: #fffbea;
   color: #d4960a;
 }
+
 .icone-bleu {
   background: #f0f4ff;
   color: #2d3ae8;
@@ -536,9 +547,7 @@ h1 {
   transform: scale(1.1);
 }
 
-/* =====================
-   RESPONSIVE TABLETTE
-===================== */
+/* RESPONSIVE TABLETTE */
 @media (max-width: 1024px) {
   .contenu {
     grid-template-columns: 1fr;
@@ -560,41 +569,39 @@ h1 {
   }
 }
 
-/* RESPONSIVE MOBILE*/
+/* RESPONSIVE MOBILE */
 @media (max-width: 768px) {
-  /* Burger visible */
   .btn-burger {
     display: block;
   }
 
-  /* Navbar */
   .nav {
     padding: 0 16px;
-    justify-content: space-around;
   }
+
   .nav__liens {
     display: none;
   }
+
   .nav__icones span {
     display: none;
   }
 
-  /* Sidebar cachée */
   .barre-laterale {
     position: fixed;
     top: 64px;
-    left: -100%;
+    right: -100%;
+    left: auto;
     height: calc(100vh - 64px);
     z-index: 200;
-    transition: left 0.3s ease;
-    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
   }
 
   .barre-laterale.ouvert {
-    left: 0;
+    right: 0;
   }
 
-  /* Contenu pleine largeur */
   .contenu {
     grid-template-columns: 1fr;
     padding: 20px 16px;
@@ -609,7 +616,6 @@ h1 {
     font-size: 24px;
   }
 
-  /* Documents responsive */
   .document {
     flex-wrap: wrap;
     gap: 10px;
@@ -619,9 +625,12 @@ h1 {
     margin-left: auto;
   }
 
-  /* Bouton flottant */
   .btn-flottant {
     bottom: 16px;
     right: 16px;
+  }
+
+  .cache{
+    display: grid;
   }
 }

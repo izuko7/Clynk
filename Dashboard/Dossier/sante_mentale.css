@@ -20,11 +20,13 @@ nav {
   padding: 12px 32px;
   background: #fff;
   border-bottom: 1px solid #e8eaf0;
+  position: sticky;
+  top: 0;
+  z-index: 300;
 }
 
 .logo {
   height: 36px;
-  width: auto;
 }
 
 .nav-liens {
@@ -64,13 +66,21 @@ nav {
   height: 34px;
   border-radius: 50%;
   overflow: hidden;
-  background: #3b5bdb;
 }
 
 .photo-avatar img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.btn-burger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #555;
+  cursor: pointer;
 }
 
 /* LAYOUT */
@@ -87,6 +97,7 @@ aside {
   padding: 24px 16px;
   display: flex;
   flex-direction: column;
+  gap: 16px;
 }
 
 .sidebar-titre {
@@ -99,7 +110,10 @@ aside {
 .sidebar-info {
   font-size: 11px;
   color: #9ca3af;
-  margin-top: 2px;
+}
+
+.sidebar-nav {
+  display: none;
 }
 
 .sidebar-bas {
@@ -151,7 +165,6 @@ main {
   font-size: 42px;
   font-weight: 800;
   line-height: 1.15;
-  color: #1a1a2e;
 }
 
 .hero-gauche h1 span {
@@ -241,7 +254,6 @@ main {
 .carte-bienetre h3 {
   font-size: 18px;
   font-weight: 700;
-  color: #1a1a2e;
 }
 
 .carte-bienetre > p {
@@ -266,7 +278,7 @@ main {
   padding: 16px;
   cursor: pointer;
   transition:
-     0.2s,
+    0.2s,
     transform 0.2s;
   flex: 1;
   border: 1px solid #e5e7eb;
@@ -333,7 +345,7 @@ main {
   border-radius: 8px;
   letter-spacing: 0.05em;
   text-align: center;
-  transition:  0.2s;
+  transition: 0.2s;
   margin-top: auto;
 }
 
@@ -357,7 +369,6 @@ main {
 .ressources-entete h3 {
   font-size: 20px;
   font-weight: 700;
-  color: #1a1a2e;
 }
 
 .ressources-entete p {
@@ -454,7 +465,6 @@ main {
 .ressource-info h4 {
   font-size: 15px;
   font-weight: 700;
-  color: #1a1a2e;
 }
 
 .ressource-info p {
@@ -476,4 +486,106 @@ main {
 
 .btn-ressource:hover {
   text-decoration: underline;
+}
+
+/* RESPONSIVE TABLETTE */
+@media (max-width: 1024px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .conseil-jour {
+    position: static;
+    width: 100%;
+    margin-top: 16px;
+  }
+
+  .grille-centre {
+    grid-template-columns: 1fr;
+    margin-top: 0;
+  }
+
+  .ressources-grille {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* RESPONSIVE MOBILE */
+@media (max-width: 768px) {
+  nav {
+    padding: 12px 16px;
+  }
+
+  .nav-liens,
+  .nav-icones i {
+    display: none;
+  }
+
+  .btn-burger {
+    display: block;
+  }
+
+  .disposition {
+    grid-template-columns: 1fr;
+  }
+
+  aside {
+    position: fixed;
+    top: 61px;
+    right: -100%;
+    width: 220px;
+    height: calc(100vh - 61px);
+    z-index: 200;
+    transition: right 0.3s ease;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+  }
+
+  aside.ouvert {
+    right: 0;
+  }
+
+  /* Onglets visibles dans la sidebar en mobile */
+  .sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .sidebar-nav a {
+    text-decoration: none;
+    font-size: 13px;
+    color: #4b5563;
+    font-weight: 500;
+    padding: 8px 10px;
+    border-radius: 8px;
+    transition:
+      0.2s,
+      color 0.2s;
+  }
+
+  .sidebar-nav a:hover,
+  .sidebar-nav a.actif {
+    background: #eef2ff;
+    color: #3b5bdb;
+  }
+
+  main {
+    padding: 20px 16px;
+  }
+
+  .hero-gauche h1 {
+    font-size: 28px;
+  }
+
+  .emojis {
+    flex-wrap: wrap;
+  }
+
+  .emoji-item {
+    flex: 1 1 calc(50% - 6px);
+  }
+
+  .ressources-grille {
+    grid-template-columns: 1fr;
+  }
 }

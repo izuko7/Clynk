@@ -18,7 +18,7 @@
             <li><a href="medical.html">Dossier médicale</a></li>
             <li><a href="teleconsultation.html">Téléconsultation</a></li>
             <li><a href="sante_mentale.html" class="actif">Santé mentale</a></li>
-            <li><a href="#">Aide</a></li>
+            <li><a href="aide.html">Aide</a></li>
         </ul>
         <div class="nav-icones">
             <i class="fa-solid fa-bell"></i>
@@ -27,20 +27,31 @@
                 <img src="../../ressources/User avatar.jpg" alt="">
             </div>
         </div>
+        <!-- AJOUT : bouton burger -->
+        <button class="btn-burger" id="btn-burger">
+            <i class="fa-solid fa-bars"></i>
+        </button>
     </nav>
 
     <!-- Layout -->
     <div class="disposition">
 
         <!-- Sidebar -->
-        <aside>
+        <aside id="sidebar">
             <p class="sidebar-titre">BIENVENUE</p>
             <p class="sidebar-info">votre portail médical</p>
+
+            <!-- AJOUT : liens de navigation visibles en mobile -->
+            <nav class="sidebar-nav">
+                <a href="medical.html">Dossier médicale</a>
+                <a href="teleconsultation.html">Téléconsultation</a>
+                <a href="sante_mentale.html" class="actif">Santé mentale</a>
+                <a href="aide.html">Aide</a>
+            </nav>
+
             <div class="sidebar-bas">
                 <a href="#"><i class="fa-regular fa-circle-question"></i> Centre d'aide</a>
-                 <a class="element-nav" href="#" id="btn-deconnexion"><i class="fa-solid fa-right-from-bracket"></i>
-                    Déconnexion
-                </a>
+                <a href="#" id="btn-deconnexion"><i class="fa-solid fa-right-from-bracket"></i> Déconnexion</a>
             </div>
         </aside>
 
@@ -169,25 +180,23 @@
 
         </main>
     </div>
+
     <script src="../../script/auth.js"></script>
     <script>
-
         const user = getUserConnecte();
 
         if (!user || user.role !== "client") {
             window.location.href = "../../Auth/connexion.html";
         }
 
-        // if (user) {
-        //     document.getElementById("titre-bienvenue").textContent = "Bonjour, " + user.nom;
-        //     document.getElementById("patient-id").textContent = "ID: #" + user.id;
-        // }
-        console.log(getUserConnecte())
+        document.getElementById("btn-burger").addEventListener("click", function () {
+            document.getElementById("sidebar").classList.toggle("ouvert");
+        });
 
         document.getElementById("btn-deconnexion").addEventListener("click", function (e) {
-                e.preventDefault();
-                logOut();
-            });
+            e.preventDefault();
+            logOut();
+        });
     </script>
 </body>
 </html>

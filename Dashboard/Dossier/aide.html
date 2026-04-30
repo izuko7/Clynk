@@ -6,38 +6,25 @@
     <title>CLYNK | Centre d'Aide</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../dashboard_style.css">
     <link rel="stylesheet" href="aide_style.css">
-    <link rel="icon" type="image/x-icon" href="../ressources/favicon_io/android-chrome-512x512.png" />
-    <script src="../script/essentials.js"></script>
+    <link rel="icon" type="image/x-icon" href="../../ressources/favicon_io/android-chrome-512x512.png" />
 </head>
 <body>
 
-    <!-- Menu mobile -->
-    <div class="mobile-menu" id="mobile-menu">
-        <a href="Dossier/medical.html"><i class="fa-solid fa-file-medical"></i> Dossier médical</a>
-        <a href="Dossier/teleconsultation.html"><i class="fa-solid fa-video"></i> Téléconsultation</a>
-        <a href="Dossier/sante_mentale.html"><i class="fa-solid fa-brain"></i> Santé mentale</a>
-        <a href="aide.html"><i class="fa-solid fa-circle-question"></i> Aide</a>
-        <a href="#" id="btn-deconnexion-mobile">
-            <i class="fa-solid fa-arrow-right-from-bracket"></i> Déconnexion
-        </a>
-    </div>
-
     <!-- Navbar -->
     <nav>
-        <img src="../ressources/logo Clynk1.png" alt="Logo" class="logo" />
+        <img src="../../ressources/logo Clynk1.png" alt="Logo" class="logo" />
         <ul class="nav-links">
-            <li><a href="Dossier/medical.html">Dossier médical</a></li>
-            <li><a href="Dossier/teleconsultation.html">Téléconsultation</a></li>
-            <li><a href="Dossier/sante_mentale.html">Santé mentale</a></li>
-            <li><a href="aide.html">Aide</a></li>
+            <li><a href="medical.html">Dossier médical</a></li>
+            <li><a href="teleconsultation.html">Téléconsultation</a></li>
+            <li><a href="sante_mentale.html">Santé mentale</a></li>
+            <li><a href="aide.html" class="actif">Aide</a></li>
         </ul>
         <div class="nav-icons">
             <a href="#"><i class="fa-solid fa-bell"></i></a>
             <a href="#"><i class="fa-solid fa-gear"></i></a>
             <div class="photo-avatar">
-                <img src="../ressources/User avatar.jpg" alt="">
+                <img src="../../ressources/User avatar.jpg" alt="">
             </div>
             <button class="hamburger" id="hamburger">
                 <span></span><span></span><span></span>
@@ -49,14 +36,20 @@
     <div class="layout">
 
         <!-- Sidebar -->
-        <aside>
-            <p class="sidebar-title">BIENVENUE</p>
+        <aside id="sidebar">
+            <p class="sidebar-titre">BIENVENUE</p>
             <p class="sidebar-info">votre portail médical</p>
-            <div class="sidebar-down">
-                <a href="aide.html"><i class="fa-regular fa-circle-question"></i> Centre d'aide</a>
-                <a href="#" id="btn-deconnexion">
-                    <i class="fa-solid fa-arrow-right-from-bracket"></i> Déconnexion
-                </a>
+
+            <nav class="sidebar-nav">
+                <a href="medical.html"><i class="fa-solid fa-file-medical"></i> Dossier médical</a>
+                <a href="teleconsultation.html"><i class="fa-solid fa-video"></i> Téléconsultation</a>
+                <a href="sante_mentale.html"><i class="fa-solid fa-brain"></i> Santé mentale</a>
+                <a href="aide.html" class="actif"><i class="fa-solid fa-circle-question"></i> Aide</a>
+            </nav>
+
+            <div class="sidebar-bas">
+                <a href="#"><i class="fa-regular fa-circle-question"></i> Centre d'aide</a>
+                <a href="#" id="btn-deconnexion"><i class="fa-solid fa-right-from-bracket"></i> Déconnexion</a>
             </div>
         </aside>
 
@@ -78,7 +71,6 @@
             <div class="aide-wrapper">
                 <div class="aide-contenu">
 
-                    <!-- Gauche : catégories + FAQ -->
                     <div>
                         <div class="categories">
                             <div class="categorie-carte">
@@ -109,7 +101,6 @@
                             </div>
                         </div>
 
-                        <!-- FAQ -->
                         <div class="faq-section">
                             <h2>Foire aux questions populaires</h2>
                             <p>Les sujets les plus consultés par nos patients cette semaine.</p>
@@ -146,7 +137,6 @@
                         </div>
                     </div>
 
-                    <!-- Droite : assistance -->
                     <div>
                         <div class="assistance">
                             <h3>Vous ne trouvez pas votre réponse ?</h3>
@@ -160,7 +150,6 @@
 
                 </div>
 
-                <!-- Footer -->
                 <div class="aide-footer">
                     <p><strong>CLYNK</strong> © 2026 Plateforme de Santé Numérique Sécurisée</p>
                     <div class="aide-footer-liens">
@@ -174,29 +163,29 @@
         </main>
     </div>
 
+    <script src="../../script/essentials.js"></script>
+    <script src="../../script/auth.js"></script>
     <script>
         const user = getUserConnecte();
-        if (!user || user.role !== "patient") {
-            window.location.href = "../Auth/connexion.html";
+
+        if (!user || user.role !== "client") {
+            window.location.href = "../../Auth/connexion.html";
         }
 
-        document.getElementById("btn-deconnexion").addEventListener("click", function(e) {
-            e.preventDefault();
-            deconnecter();
-        });
-
-        document.getElementById("btn-deconnexion-mobile").addEventListener("click", function(e) {
-            e.preventDefault();
-            deconnecter();
-        });
-
+        // Burger → sidebar droite
         document.getElementById("hamburger").addEventListener("click", function () {
-            document.getElementById("mobile-menu").classList.toggle("open");
+            document.getElementById("sidebar").classList.toggle("ouvert");
         });
 
-        document.querySelectorAll(".faq-question").forEach(function(q) {
-            q.addEventListener("click", function() {
-                this.closest(".faq-item").classList.toggle("open");
+        document.getElementById("btn-deconnexion").addEventListener("click", function (e) {
+            e.preventDefault();
+            logOut();
+        });
+
+        // FAQ accordion
+        document.querySelectorAll(".faq-question").forEach(function (question) {
+            question.addEventListener("click", function () {
+                this.parentElement.classList.toggle("open");
             });
         });
     </script>

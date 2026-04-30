@@ -8,15 +8,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="icon" type="image/x-icon" href="../../ressources/favicon_io/android-chrome-512x512.png" />
   <link rel="stylesheet" href="style.css" />
-
   <script src="../../script/essentials.js"></script>
 </head>
 
 <body>
   <nav class="nav">
-    <button class="btn-burger" id="btn-burger">
-      <i class="fa-solid fa-bars"></i>
-    </button>
     <img src="../../ressources/logo Clynk1.png" alt="Logo Clynk" class="nav__logo" />
     <div class="nav__liens">
       <a href="medical.html" class="actif">Dossier médicale</a>
@@ -31,14 +27,14 @@
         <img src="../../ressources/User avatar.jpg" alt="" />
       </div>
     </div>
+    <button class="btn-burger" id="btn-burger">
+      <i class="fa-solid fa-bars"></i>
+    </button>
   </nav>
 
-  <!-- MISE EN PAGE -->
   <div class="mise-en-page">
-    <!-- BARRE LATÉRALE -->
     <aside class="barre-laterale">
       <div class="patient__label">PORTAIL PATIENT</div>
-      <!--  id ajouté -->
       <div class="patient__id" id="patient-id"></div>
 
       <a class="element-nav" href="#"><i class="fa-solid fa-chart-simple"></i> Résumé de Santé</a>
@@ -46,23 +42,23 @@
       <a class="element-nav" href="#"><i class="fa-solid fa-flask"></i> Résultats de Labo</a>
       <a class="element-nav" href="#"><i class="fa-solid fa-syringe"></i> Vaccinations</a>
       <a class="element-nav" href="#"><i class="fa-solid fa-triangle-exclamation"></i> Allergies</a>
-      <a class="element-nav" href="medical.html" class="actif">Dossier médicale</a>
-      <a class="element-nav" class="element-nav" href="teleconsultation.html">Téléconsultation</a>
-      <a class="element-nav" href="sante_mentale.html">Santé mentale</a>
-      <a class="element-nav" href="#">Aide</a>
+      <span class="cache">
+        <a class="element-nav actif" href="medical.html"><i class="fa-solid fa-folder-open"></i> Dossier médicale</a>
+        <a class="element-nav" href="teleconsultation.html"><i class="fa-solid fa-video"></i> Téléconsultation</a>
+        <a class="element-nav" href="sante_mentale.html"><i class="fa-solid fa-brain"></i> Santé mentale</a>
+        <a class="element-nav" href="aide.html"><i class="fa-solid fa-circle-question"></i> Aide</a>
+      </span>
+
       <div class="barre-laterale__bas">
         <button class="btn-rdv">PRENDRE RDV</button>
         <a class="element-nav" href="#"><i class="fa-solid fa-circle-question"></i> Centre d'aide</a>
-
-        <a class="element-nav" href="#" id="btn-deconnexion"><i class="fa-solid fa-right-from-bracket"></i>
-          Déconnexion
+        <a class="element-nav" href="#" id="btn-deconnexion">
+          <i class="fa-solid fa-right-from-bracket"></i> Déconnexion
         </a>
       </div>
     </aside>
 
-    <!-- CONTENU PRINCIPAL -->
     <main class="contenu">
-      <!-- COLONNE GAUCHE -->
       <div class="colonne-gauche">
         <div>
           <h1 id="titre-bienvenue">Dossier Médical</h1>
@@ -92,9 +88,7 @@
               </div>
               <div class="document__actions">
                 <button title="Voir"><i class="fa-solid fa-eye"></i></button>
-                <button title="Télécharger">
-                  <i class="fa-solid fa-download"></i>
-                </button>
+                <button title="Télécharger"><i class="fa-solid fa-download"></i></button>
               </div>
             </div>
 
@@ -108,9 +102,7 @@
               </div>
               <div class="document__actions">
                 <button title="Voir"><i class="fa-solid fa-eye"></i></button>
-                <button title="Télécharger">
-                  <i class="fa-solid fa-download"></i>
-                </button>
+                <button title="Télécharger"><i class="fa-solid fa-download"></i></button>
               </div>
             </div>
 
@@ -124,18 +116,14 @@
               </div>
               <div class="document__actions">
                 <button title="Voir"><i class="fa-solid fa-eye"></i></button>
-                <button title="Télécharger">
-                  <i class="fa-solid fa-download"></i>
-                </button>
+                <button title="Télécharger"><i class="fa-solid fa-download"></i></button>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- COLONNE DROITE -->
       <div class="colonne-droite">
-        <!-- QR CODE -->
         <div class="banniere-qr">
           <div class="banniere-qr__icone">
             <i class="fa-solid fa-qrcode"></i>
@@ -147,7 +135,6 @@
           <i class="fa-solid fa-chevron-right"></i>
         </div>
 
-        <!-- PROFIL DE SANTÉ -->
         <div class="carte-profil">
           <h3>Profil de Santé</h3>
 
@@ -190,23 +177,21 @@
           <button class="btn-mise-a-jour">Mettre à jour le profil</button>
         </div>
 
-        <!-- SÉCURITÉ -->
         <div class="carte-securite">
           <i class="fa-solid fa-shield-halved icone-securite"></i>
           <strong>HÉBERGEMENT CERTIFIÉ HDS</strong>
           Vos données sont protégées par les plus hauts standards de sécurité
           médicale en vigueur.
           <div class="derniere-maj">
-            <i class="fa-solid fa-rotate"></i> DERNIÈRE MISE À JOUR : 15 NOV
-            2023
+            <i class="fa-solid fa-rotate"></i> DERNIÈRE MISE À JOUR : 15 NOV 2023
           </div>
         </div>
       </div>
     </main>
   </div>
 
-  <!-- BOUTON FLOTTANT -->
   <div class="btn-flottant"><i class="fa-solid fa-plus"></i></div>
+
   <script src="../../script/auth.js"></script>
   <script>
     const user = getUserConnecte();
@@ -216,24 +201,18 @@
     }
 
     if (user) {
-      document.getElementById("titre-bienvenue").textContent =
-        "Bonjour, " + user.nom;
+      document.getElementById("titre-bienvenue").textContent = "Bonjour, " + user.nom;
       document.getElementById("patient-id").textContent = "ID: #" + user.id;
     }
-    console.log(getUserConnecte());
 
-    document
-      .getElementById("btn-burger")
-      .addEventListener("click", function () {
-        document.querySelector(".barre-laterale").classList.toggle("ouvert");
-      });
+    document.getElementById("btn-burger").addEventListener("click", function () {
+      document.querySelector(".barre-laterale").classList.toggle("ouvert");
+    });
 
-    document
-      .getElementById("btn-deconnexion")
-      .addEventListener("click", function (e) {
-        e.preventDefault();
-        logOut();
-      });
+    document.getElementById("btn-deconnexion").addEventListener("click", function (e) {
+      e.preventDefault();
+      logOut();
+    });
   </script>
 </body>
 
