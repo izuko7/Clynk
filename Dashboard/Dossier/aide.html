@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLYNK | Centre d'Aide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../dashboard_style.css">
+    <link rel="stylesheet" href="aide_style.css">
+    <link rel="icon" type="image/x-icon" href="../ressources/favicon_io/android-chrome-512x512.png" />
+    <script src="../script/essentials.js"></script>
+</head>
+<body>
+
+    <!-- Menu mobile -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="Dossier/medical.html"><i class="fa-solid fa-file-medical"></i> Dossier médical</a>
+        <a href="Dossier/teleconsultation.html"><i class="fa-solid fa-video"></i> Téléconsultation</a>
+        <a href="Dossier/sante_mentale.html"><i class="fa-solid fa-brain"></i> Santé mentale</a>
+        <a href="aide.html"><i class="fa-solid fa-circle-question"></i> Aide</a>
+        <a href="#" id="btn-deconnexion-mobile">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i> Déconnexion
+        </a>
+    </div>
+
+    <!-- Navbar -->
+    <nav>
+        <img src="../ressources/logo Clynk1.png" alt="Logo" class="logo" />
+        <ul class="nav-links">
+            <li><a href="Dossier/medical.html">Dossier médical</a></li>
+            <li><a href="Dossier/teleconsultation.html">Téléconsultation</a></li>
+            <li><a href="Dossier/sante_mentale.html">Santé mentale</a></li>
+            <li><a href="aide.html">Aide</a></li>
+        </ul>
+        <div class="nav-icons">
+            <a href="#"><i class="fa-solid fa-bell"></i></a>
+            <a href="#"><i class="fa-solid fa-gear"></i></a>
+            <div class="photo-avatar">
+                <img src="../ressources/User avatar.jpg" alt="">
+            </div>
+            <button class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Layout -->
+    <div class="layout">
+
+        <!-- Sidebar -->
+        <aside>
+            <p class="sidebar-title">BIENVENUE</p>
+            <p class="sidebar-info">votre portail médical</p>
+            <div class="sidebar-down">
+                <a href="aide.html"><i class="fa-regular fa-circle-question"></i> Centre d'aide</a>
+                <a href="#" id="btn-deconnexion">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i> Déconnexion
+                </a>
+            </div>
+        </aside>
+
+        <!-- Contenu -->
+        <main>
+
+            <!-- Hero -->
+            <div class="aide-hero">
+                <div class="aide-wrapper">
+                    <p class="breadcrumb"><span>Centre d'Aide</span></p>
+                    <h1>Comment pouvons-nous<br /><span>vous aider aujourd'hui ?</span></h1>
+                    <div class="barre-recherche">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" placeholder="Rechercher une réponse, un guide ou un sujet..." />
+                    </div>
+                </div>
+            </div>
+
+            <div class="aide-wrapper">
+                <div class="aide-contenu">
+
+                    <!-- Gauche : catégories + FAQ -->
+                    <div>
+                        <div class="categories">
+                            <div class="categorie-carte">
+                                <div class="categorie-icone icone-bleu">
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                                <h3>Mon compte</h3>
+                                <p>Gérez vos informations personnelles, préférences de notification et paramètres de profil.</p>
+                                <a href="#" class="voir-articles">Voir les articles <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+
+                            <div class="categorie-carte">
+                                <div class="categorie-icone icone-vert">
+                                    <i class="fa-solid fa-shield-halved"></i>
+                                </div>
+                                <h3>Sécurité</h3>
+                                <p>Questions sur la confidentialité des données, authentification forte et protection de compte.</p>
+                                <a href="#" class="voir-articles">Voir les articles <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+
+                            <div class="categorie-carte">
+                                <div class="categorie-icone icone-orange">
+                                    <i class="fa-solid fa-folder-open"></i>
+                                </div>
+                                <h3>Dossier Médical</h3>
+                                <p>Accédez à vos résultats d'examens, historique de consultation et documents partagés avec vos médecins.</p>
+                                <a href="#" class="voir-articles">Voir les articles <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <!-- FAQ -->
+                        <div class="faq-section">
+                            <h2>Foire aux questions populaires</h2>
+                            <p>Les sujets les plus consultés par nos patients cette semaine.</p>
+
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    Comment partager mon dossier avec un nouveau spécialiste ?
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </div>
+                                <div class="faq-reponse">
+                                    Depuis votre dossier médical, cliquez sur "Partager" et entrez l'adresse email ou le numéro RPPS du spécialiste. Il recevra un accès sécurisé et limité dans le temps.
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    Quelle est la différence entre une téléconsultation et un message ?
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </div>
+                                <div class="faq-reponse">
+                                    Une téléconsultation est une consultation vidéo en temps réel avec votre médecin. Un message est une communication asynchrone, sans délai garanti de réponse.
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    Mes données de santé sont-elles hébergées en France ?
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </div>
+                                <div class="faq-reponse">
+                                    Oui, toutes vos données sont hébergées en France par un hébergeur certifié HDS, conformément à la réglementation française et au RGPD.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Droite : assistance -->
+                    <div>
+                        <div class="assistance">
+                            <h3>Vous ne trouvez pas votre réponse ?</h3>
+                            <p>Notre équipe de support clinique est disponible pour vous accompagner 24/24.</p>
+                            <a href="#" class="btn-support">
+                                Contacter le support <i class="fa-solid fa-comment"></i>
+                            </a>
+                            <p class="assistance-note">Temps de réponse moyen : &lt; 2 minutes</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Footer -->
+                <div class="aide-footer">
+                    <p><strong>CLYNK</strong> © 2026 Plateforme de Santé Numérique Sécurisée</p>
+                    <div class="aide-footer-liens">
+                        <a href="#">Confidentialité</a>
+                        <a href="#">CGU</a>
+                        <a href="#">Mentions Légales</a>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        const user = getUserConnecte();
+        if (!user || user.role !== "patient") {
+            window.location.href = "../Auth/connexion.html";
+        }
+
+        document.getElementById("btn-deconnexion").addEventListener("click", function(e) {
+            e.preventDefault();
+            deconnecter();
+        });
+
+        document.getElementById("btn-deconnexion-mobile").addEventListener("click", function(e) {
+            e.preventDefault();
+            deconnecter();
+        });
+
+        document.getElementById("hamburger").addEventListener("click", function () {
+            document.getElementById("mobile-menu").classList.toggle("open");
+        });
+
+        document.querySelectorAll(".faq-question").forEach(function(q) {
+            q.addEventListener("click", function() {
+                this.closest(".faq-item").classList.toggle("open");
+            });
+        });
+    </script>
+
+</body>
+</html>

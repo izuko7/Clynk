@@ -1,0 +1,404 @@
+/* ── AIDE SPÉCIFIQUE ── */
+.aide-hero {
+  background: #fff;
+  padding: 40px 0 32px;
+  border-bottom: 1px solid #e8eaf0;
+}
+
+.aide-hero h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a1a2e;
+  line-height: 1.2;
+}
+
+.aide-hero h1 span {
+  color: #3b5bdb;
+}
+
+.aide-hero p {
+  font-size: 13px;
+  color: #6b7280;
+  margin-top: 6px;
+}
+
+.breadcrumb {
+  font-size: 12px;
+  color: #9ca3af;
+  margin-bottom: 16px;
+}
+
+.breadcrumb span {
+  color: #3b5bdb;
+}
+
+/* BARRE DE RECHERCHE */
+.barre-recherche {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 12px 16px;
+  max-width: 480px;
+  margin-top: 20px;
+  transition: border-color 0.2s;
+}
+
+.barre-recherche:focus-within {
+  border-color: #3b5bdb;
+}
+
+.barre-recherche i {
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+.barre-recherche input {
+  border: none;
+  background: transparent;
+  font-size: 13px;
+  font-family: "Poppins", sans-serif;
+  color: #1a1a2e;
+  width: 100%;
+  outline: none;
+}
+
+.barre-recherche input::placeholder {
+  color: #9ca3af;
+}
+
+/* CONTENU AIDE */
+.aide-contenu {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 24px;
+  padding: 28px 0;
+}
+
+/* GRILLE CATÉGORIES */
+.categories {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-content: start;
+}
+
+.categorie-carte {
+  background: #fff;
+  border-radius: 14px;
+  padding: 24px;
+  border: 1px solid #e8eaf0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition:
+    box-shadow 0.2s,
+    border-color 0.2s;
+  cursor: pointer;
+}
+
+.categorie-carte:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  border-color: #c7d2fe;
+}
+
+.categorie-icone {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.icone-bleu {
+  background: #eef2ff;
+  color: #3b5bdb;
+}
+.icone-vert {
+  background: #dcfce7;
+  color: #16a34a;
+}
+.icone-orange {
+  background: #fff7ed;
+  color: #ea580c;
+}
+
+.categorie-carte h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.categorie-carte p {
+  font-size: 12px;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.voir-articles {
+  font-size: 12px;
+  color: #3b5bdb;
+  text-decoration: none;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: auto;
+}
+
+.voir-articles:hover {
+  text-decoration: underline;
+}
+
+/* ASSISTANCE DIRECTE */
+.assistance {
+  background: #1e3a6e;
+  border-radius: 14px;
+  padding: 24px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.assistance h3 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.assistance p {
+  font-size: 12px;
+  opacity: 0.75;
+  line-height: 1.6;
+}
+
+.btn-support {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #fff;
+  color: #1e3a6e;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 12px 16px;
+  border-radius: 8px;
+  transition:  0.2s;
+}
+
+.btn-support:hover {
+  background: #f0f4ff;
+}
+
+.assistance-note {
+  font-size: 10px;
+  opacity: 0.5;
+  text-align: center;
+}
+
+/* FAQ */
+.faq-section {
+  margin-top: 8px;
+}
+
+.faq-section h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 4px;
+}
+
+.faq-section > p {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+.faq-item {
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #e8eaf0;
+  margin-bottom: 8px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.faq-item:hover {
+  border-color: #c7d2fe;
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  color: #1a1a2e;
+  gap: 12px;
+}
+
+.faq-question i {
+  color: #9ca3af;
+  font-size: 12px;
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+
+.faq-item.open .faq-question i {
+  transform: rotate(90deg);
+}
+
+.faq-reponse {
+  display: none;
+  padding: 0 20px 16px;
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 1.7;
+}
+
+.faq-item.open .faq-reponse {
+  display: block;
+}
+
+/* FOOTER */
+.aide-footer {
+  border-top: 1px solid #e8eaf0;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #9ca3af;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.aide-footer strong {
+  color: #1a1a2e;
+}
+
+.aide-footer-liens {
+  display: flex;
+  gap: 20px;
+}
+
+.aide-footer-liens a {
+  color: #9ca3af;
+  text-decoration: none;
+  font-size: 12px;
+  transition: color 0.2s;
+}
+
+.aide-footer-liens a:hover {
+  color: #3b5bdb;
+}
+
+/* WRAPPER */
+.aide-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+
+.hamburger span {
+  width: 22px;
+  height: 2px;
+  background: #4b5563;
+  border-radius: 2px;
+}
+
+/* MENU MOBILE */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: #fff;
+  border-bottom: 1px solid #e8eaf0;
+  padding: 12px 16px;
+  gap: 4px;
+}
+
+.mobile-menu a {
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  color: #4b5563;
+  padding: 10px 12px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition:
+    0.2s,
+    color 0.2s;
+}
+
+.mobile-menu a:hover {
+  background: #f0f4ff;
+  color: #3b5bdb;
+}
+.mobile-menu.open {
+  display: flex;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  aside {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+  main {
+    padding: 0;
+  }
+  .aide-wrapper {
+    padding: 0 16px;
+  }
+  .aide-contenu {
+    grid-template-columns: 1fr;
+  }
+  .aide-hero {
+    padding: 28px 0 24px;
+  }
+  .aide-hero h1 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  nav {
+    padding: 12px 16px;
+  }
+  .nav-links {
+    display: none;
+  }
+  .categories {
+    grid-template-columns: 1fr;
+  }
+  .aide-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
