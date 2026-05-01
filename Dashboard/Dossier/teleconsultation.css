@@ -138,6 +138,10 @@ aside {
   gap: 10px;
 }
 
+.cache{
+    display: none;
+}
+
 .sidebar-bas a {
   display: flex;
   align-items: center;
@@ -521,6 +525,10 @@ main {
   .rdv-liste {
     grid-template-columns: 1fr 1fr;
   }
+
+  .cache{
+    display: grid;
+}
 }
 
 /* RESPONSIVE MOBILE */
@@ -599,4 +607,8 @@ main {
     width: 100%;
     text-align: center;
   }
+
+   .cache{
+    display: grid;
+}
 }
