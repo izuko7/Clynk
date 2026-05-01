@@ -7,12 +7,27 @@ const usersDefaut = [
     role: "client",
   },
   {
+    id: 1,
+    nom: "Kouakou Campbell",
+    email: "campbellmiha979@gmail.com",
+    password: "30032004",
+    role: "client",
+  },
+  {
     id: 2,
     nom: "Dr. Aris Thémis",
     email: "aris@clynk.ci",
     password: "12345",
     role: "medecin",
     rpps: "10001234567",
+  },
+  {
+    id: 2,
+    nom: "Dr. Touré Emeraude",
+    email: "Kemeraude@clynk.ci",
+    password: "12345",
+    role: "medecin",
+    rpps: "60031234569",
   },
 ];
 
