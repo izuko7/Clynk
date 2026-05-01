@@ -526,9 +526,6 @@ main {
     grid-template-columns: 1fr 1fr;
   }
 
-  .cache{
-    display: grid;
-}
 }
 
 /* RESPONSIVE MOBILE */

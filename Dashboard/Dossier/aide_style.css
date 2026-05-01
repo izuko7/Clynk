@@ -498,6 +498,12 @@ main {
   .aide-wrapper {
     padding: 0 16px;
   }
+
+  .cache{
+    display: grid;
+}
+
+
   .aide-contenu {
     grid-template-columns: 1fr;
   }
